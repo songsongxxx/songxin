@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>RESONANCE</title>
+  <link rel="icon" href="sword.jpg" type="image/jpg">
+  <link rel="stylesheet" href="style__projects.css">
+  <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
+  </head>
+<body>
+    <div class="top_container">
+        <div class="navigation_container">
+            <a href="index.html">
+                <:::::::::::::::::}] back
+            </a>
+
+            <a href="skin_bones2.html">
+                <:::::::::::::::::}] previous
+            </a>
+
+            <a href="scar.html">
+                next [{:::::::::::::::::>
+            </a>
+        </div>
+        <div class="text_container">
+            <div class="description_container">
+                <div class="title_container">
+                    <h1 style="font-family: SignPainter;"><tspan style="font-size: smaller;">R͟͞E͟͞S͟͞O͟͞N͟͞A͟͞N͟͞C͟͞E͟͞</h1>
+                    <h2>ℐ𝓃𝓈𝓉𝒶𝓁𝓁𝒶𝓉𝒾𝑜𝓃</h2>
+                </div>
+                <div class="scroll_container">
+                    <p>
+                        This interactive installation encapsulates a design crafted for the simultaneous engagement of two individuals. When a single person seals the shell, a subtle response emanates from the embedded buzzer. However, when two individuals synchronize the opening and closing of the shell simultaneously, the ensuing interplay between the two objects shapes the amplitude of the response sound, creating a heightened auditory experience.<br> <br>
+                        In the natural world, hermit crabs seek refuge within the abandoned shells of deceased mollusks or other sturdy shells, reinforcing their delicate abdomens. These bivalves feature twin pore bodies that facilitate respiration and navigation across the seas as they rhythmically unveil and veil themselves. This perpetual cadence serves both as a protective measure and a testament to the sea's inherent influence, imprinting the impact of environmental forces and potential hazards.<br> <br>
+                        In a parallel vein, the "shell" in this installation serves as an emblematic shelter, reminiscent of societal frameworks that cradle delicate bodies and ethereal spirits. The experiential resonance is revealed through passion and compassion, mirroring the way hermit crabs seek solace within their protective encasements.<br> <br>
+
+                        *Arduino<br>
+                        *Zbrush<br>
+
+
+                    </p>
+                </div>
+            </div>
+            <div class="credit_container">
+                <h2>
+                    <tspan style="color: darkgrey;">𝒮𝒰ℬ-𝒮𝒴𝒮𝒯ℰℳ𝒮</tspan><br>
+                    <tspan style="font-size: smaller;">҉̇͊͑1st-4th September 2022</tspan><br>
+                    <tspan style="font-size: smaller;">St James Hatcham</tspan><br> <br>  <br>
+
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <div class="bottom_container">
+            <div class="video_container">
+                <video src="ResResonance.mp4" controls autoplay muted loop></video>
+            </div>
+
+            <div class="image_container">
+                <img src="Respic1.jpeg" alt="Description of the image" class="clickable-image">
+                <img src="Respic2.jpeg" alt="Description of the image" class="clickable-image">
+                <img src="Respic3.jpeg" alt="Description of the image" class="clickable-image">
+            </div>
+
+            <div class="image_container">
+                <img src="Respic4.jpeg" alt="Description of the image" class="clickable-image">
+                <img src="Resanother line to desplay01.png" alt="Description of the image" class="clickable-image">
+                <img src="Resanother line to desplay02.png" alt="Description of the image" class="clickable-image">
+            </div>
+
+            <div class="others_text" style="margin-bottom: 30%;">
+                <h2>
+                    <tspan style="color:rgb(0, 0, 0);"><tspan style="font-size: smaller;">ℳ𝒶𝓉ℯ𝓇𝒾𝒶𝓁𝓈: </tspan></tspan><br>
+                    <tspan style="color:grey;"><tspan style="font-size: smaller;">resin,metal,clay,shell,fabric，electric wire</tspan></tspan><br>
+
+
+                </h2>
+            </div>
+
+
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <img id="modalImage" class="modal-image">
+        </div>
+
+    </div>
+
+    <style>
+        /* 缩略图样式 */
+        .image_container img {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+            .image_container img:hover {
+                transform: scale(1.1);
+            }
+
+        /* 缩略图样式 */
+        img {
+            margin-right: 0.5vw;
+            height: 100%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+            img:hover {
+                transform: scale(1.1); /* 放大效果 */
+            }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* 黑色透明背景 */
+            z-index: 1000;
+            overflow: hidden; /* 确保模态框内内容不会溢出 */
+        }
+
+            .modal img {
+                position: absolute; /* 用于动态定位 */
+                max-width: 90vw; /* 最大宽度适配屏幕 */
+                max-height: 90vh; /* 最大高度适配屏幕 */
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* 白色发光效果 */
+                transform: translate(-50%, -50%); /* 基于中心点定位 */
+            }
+    </style>
+
+
+
+    <script>
+        const images = document.querySelectorAll(".clickable-image");
+        const modal = document.getElementById("modal");
+        const modalImage = document.getElementById("modalImage");
+
+        // 点击缩略图时显示模态框
+        images.forEach(img => {
+            img.addEventListener("click", () => {
+                // 设置模态框图片源
+                modalImage.src = img.src;
+
+                // 获取缩略图的中心点位置
+                const rect = img.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2; // 缩略图中心点 X 坐标
+                const centerY = rect.top + rect.height / 2; // 缩略图中心点 Y 坐标
+
+                // 将图片初始位置设置为缩略图中心
+                modalImage.style.left = `${centerX}px`;
+                modalImage.style.top = `${centerY}px`;
+
+                // 等待图片加载后将其移至屏幕中央
+                setTimeout(() => {
+                    modalImage.style.left = "50%";
+                    modalImage.style.top = "50%";
+                }, 0);
+
+                // 显示模态框
+                modal.style.display = "block";
+            });
+        });
+
+        // 点击模态框关闭
+        modal.addEventListener("click", () => {
+            modal.style.display = "none"; // 隐藏模态框
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 获取所有可点击的图片
+            const images = document.querySelectorAll(".clickable-image");
+            const modal = document.getElementById("modal");
+            const modalImage = document.getElementById("modalImage");
+
+            images.forEach(img => {
+                img.addEventListener("click", () => {
+                    modalImage.src = img.src; // 设置模态框中的图片
+                    modal.style.display = "block"; // 显示模态框
+                });
+            });
+
+            // 点击模态框关闭
+            modal.addEventListener("click", () => {
+                modal.style.display = "none"; // 隐藏模态框
+            });
+        });
+    </script>
+
+
+
+
+
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('show-content');
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("Script loaded");
+
+            // 获取图片和模态框元素
+            const images = document.querySelectorAll(".clickable-image");
+            const modal = document.getElementById("modal");
+            const modalImage = document.getElementById("modalImage");
+
+            // 检查模态框和图片是否存在
+            if (images.length > 0 && modal && modalImage) {
+                console.log("Images and modal found");
+
+                // 为每张图片添加点击事件
+                images.forEach(img => {
+                    img.addEventListener("click", () => {
+                        console.log("Image clicked:", img.src);
+                        modalImage.src = img.src; // 设置模态框中的图片
+                        modal.style.display = "block"; // 显示模态框
+                    });
+                });
+
+                // 点击模态框时隐藏
+                modal.addEventListener("click", () => {
+                    console.log("Modal clicked: closing");
+                    modal.style.display = "none";
+                });
+            } else {
+                console.error("Required elements not found!");
+            }
+        });
+    </script>
+
+
+</body>
+</html>
