@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BUG MOD</title>
+  <link rel="icon" href="sword.jpg" type="image/jpg">
+  <link rel="stylesheet" href="style__projects.css">
+  <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
+  <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('show-content');
+    });
+</script>
+  </head>
+<body>
+    <div class="top_container">
+        <div class="navigation_container">
+            <a href="index.html">
+                <:::::::::::::::::}] back
+            </a>
+            <a href="HALF ON GROUND,OTHER ON UNDERGROUND.html">
+                <:::::::::::::::::}] previous
+            </a>
+
+            <a href="skin_bones3.html">
+                next [{:::::::::::::::::> <br>
+            </a>
+
+        </div>
+
+        <div class="text_container">
+            <div class="description_container">
+                <div class="title_container">
+                    <h1 style="font-family: SignPainter;"><tspan style="font-size: smaller;">B͟͞U͟͞G͟͞ ͟͞M͟͞O͟͞D͟͞</tspan></h1>
+                    <h2><tspan style="color: darkgrey;">𝒱𝒾𝒹𝑒𝑜 𝑔𝒶𝓂𝑒</tspan></h2>
+                </div>
+                <div class="scroll_container">
+                    In' Bug Mod’ you can make, tattoo and photograph a digital pet insect. In-game character creation lets players customise a mass-produced product, allowing it to metamorphose into something they can form an intimate relationship with. Bug Mod centres character creation as the core and exclusive mechanic, a small world where players can make a digital creature and personalise it by giving it tattoos.
+
+                    <br> <br> Inspired both by freely made and distributed aesthetic mod packs and free to play web hosted dress up games, bug mod replaces super clean digital aesthetics with something grimier, something that wriggles and squirms away.
+
+                    <br> <br>This game is a collaborative effort between George and xin.<br><br>
+
+                    *Unreal Engine<br>
+                    *Zbrush<br>
+                    *Blender<br>
+                    *Adobe Substance 3D Painter<br>
+                    </p>
+                </div>
+            </div>
+            <div class="credit_container">
+                <h2>
+                    <tspan style="color: darkgrey;">ℰ𝓈𝓀𝒶𝓅𝒾𝓈𝓂𝓊𝓈, 𝒦𝒶𝓊𝑔𝓊𝓂𝓂𝒾 𝒾𝓂 ℳ𝑜𝓉𝒽𝑒𝓇𝒷𝑜𝒶𝓇𝒹</tspan><br>
+                    <tspan style="font-size: smaller;">҉̇͊͑19th.Apirl – 5th. May. 2024</tspan><br>
+                    <tspan style="font-size: smaller;">
+                        Erratum Gallery, Berlin, Germany
+                    </tspan><br> <br>  <br>
+
+                    、
+                    <tspan style="color: darkgrey;">𝓓𝓲𝓰𝓲𝓽𝓪𝓵 𝓓𝓪𝔂𝓭𝓻𝓮𝓪𝓶</tspan><br>
+                    <tspan style="font-size: smaller;">҉̇͊͑17th -19th November 2023</tspan><br>
+                    <tspan style="font-size: smaller;">
+                        ArtSect Gallery, London
+                    </tspan><br> <br>  <br>
+
+                    <tspan style="color: darkgrey;">𝓞𝓹𝓮𝓻𝓪𝓽𝓲𝓸𝓷 𝓡𝓗𝓸 1</tspan><br>
+                    <tspan style="font-size: smaller;">҉̇͊͑14th January 2024</tspan><br>
+                    <tspan style="font-size: smaller;">SYSTEM Shanghai</tspan> <br>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <style>
+
+        <link rel="stylesheet" href="style.css" >
+        /* 模态框样式 */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 120%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 父容器：提供阴影效果 */
+        .modal-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 90vw; /* 最大宽度 */
+            max-height: 90vh; /* 最大高度 */
+            box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8); /* 白色阴影 */
+            background-color: black; /* 黑色背景让阴影清晰可见 */
+            border-radius: 10px; /* 圆角效果 */
+            overflow: hidden; /* 避免图片超出阴影 */
+            padding: 0; /* 去掉额外的填充 */
+        }
+
+            /* 图片样式 */
+            .modal-container img {
+                width: 100%; /* 图片宽度自动填满容器 */
+                height: 100%; /* 图片高度自动填满容器 */
+                max-width: 90vw; /* 图片最大宽度适配视口 */
+                max-height: 90vh; /* 图片最大高度适配视口 */
+                object-fit: contain; /* 保持图片原始比例且不裁剪 */
+                transition: none; /* 取消任何动态效果 */
+            }
+
+        /* 缩略图样式 */
+        .image_container img {
+            cursor: pointer;
+            transition: transform 0.2s ease; /* 添加缩略图的轻微放大动画 */
+        }
+
+            .image_container img:hover {
+                transform: scale(1.1); /* 缩略图放大效果 */
+            }
+    </style>
+
+
+
+
+
+
+    <!-- 视频区域 -->
+    <div class="bottom_container">
+        <div class="video_container">
+            <video src="TRAILER_with_Gameplay.mp4" controls autoplay muted loop></video>
+        </div>
+    
+
+    <!-- 第0组图片 -->
+    <div class="image_container">
+        <img src="1bugmodEskapismus, Kaugummi im Motherboard.PNG" alt="Description of the image" class="clickable-image">
+        <img src="2bugmodEskapismus, Kaugummi im Motherboard.PNG" alt="Description of the image" class="clickable-image">
+        <img src="3bugmodEskapismus, Kaugummi im Motherboard.PNG" alt="Description of the image" class="clickable-image">
+        <img src="4bugmodEskapismus, Kaugummi im Motherboard.PNG" alt="Description of the image" class="clickable-image">
+    </div>
+
+    <!-- 第0组文字 -->
+    <div class="others_text">
+        <h2>
+            <tspan style="color:rgb(0, 0, 0);"><tspan style="font-size: smaller;">ℰ𝓈𝓀𝒶𝓅𝒾𝓈𝓂𝓊𝓈, 𝒦𝒶𝓊𝑔𝓊𝓂𝓂𝒾 𝒾𝓂 ℳ𝑜𝓉𝒽𝑒𝓇𝒷𝑜𝒶𝓇𝒹</tspan></tspan><br>
+            <tspan style="color:grey;"><tspan style="font-size: smaller;">19th.Apirl – 5th. May. 2024</tspan></tspan><br>
+            <tspan style="color:grey;"><tspan style="font-size: smaller;">Erratum Gallery, Berlin, Germany</tspan></tspan><br>
+            <tspan style="color: rgb(0, 0, 0);"><tspan style="font-size: smaller;">The exhibition at Kunstpunkt Berlin Galerie für zeitgenössische Kunst includes the group Kaugummi im Motherboard, curated by Katya Quel and Yi Li. In Berlin’s digital landscape, this project explores the interplay of digital art, gaming culture, and post-internet aesthetics. By transforming the exhibition space, "Gum in the Motherboard" invites audiences to engage with contemporary digital discourse, merging philosophical insights with practical realities to navigate the complexities of life in the digital age. Supported by Kunstpunkt Berlin and Part of Sellery Weekend.</tspan></tspan><br><br><br><br><br>
+        </h2>
+    </div>
+
+    <!-- 第一组图片 -->
+    <div class="image_container">
+        <img src="bug01.JPG" alt="Description of the image" class="clickable-image">
+        <img src="bug02.JPG" alt="Description of the image" class="clickable-image">
+        <img src="bug03.JPG" alt="Description of the image" class="clickable-image">
+    </div>
+
+    <!-- 第一组文字 -->
+    <div class="others_text">
+        <h2>
+            <tspan style="color:rgb(0, 0, 0);"><tspan style="font-size: smaller;">𝒟𝒾𝑔𝒾𝓉𝒶𝓁 𝒟𝒶𝓎𝒹𝓇𝑒𝒶𝓂</tspan></tspan><br>
+            <tspan style="color:grey;"><tspan style="font-size: smaller;">17th-19th November 2023</tspan></tspan><br>
+            <tspan style="color:grey;"><tspan style="font-size: smaller;">ArtSect Gallery,London</tspan></tspan><br>
+            <tspan style="color: rgb(0, 0, 0);"><tspan style="font-size: smaller;">Digital Daydream is a multidisciplinary exhibition that focuses on Anime and Gaming culture, dissecting subjects into environmental elements and investigating the culture as a new habitat. Each work represents a way people form a relationship with the digital, and in some cases the relationship becomes intimate.</tspan></tspan><br><br><br><br><br>
+        </h2>
+    </div>
+
+    <!-- 第二组图片 -->
+    <div class="image_container">
+        <img src="bug101.JPG" alt="Description of the image" class="clickable-image">
+        <img src="bug102.JPG" alt="Description of the image" class="clickable-image">
+        <img src="bug103.JPG" alt="Description of the image" class="clickable-image">
+    </div>
+    <!-- 第3组文字 -->
+    <div class="others_text">
+        <h2>
+            <tspan style="color:rgb(0, 0, 0);"><tspan style="font-size: smaller;">𝒪𝓅𝑒𝓇𝒶𝓉𝒾𝑜𝓃 ℛℋ𝑜 1 </tspan></tspan><br>
+            <tspan style="color:grey;"><tspan style="font-size: smaller;">14th January 2024</tspan></tspan><br>
+            <tspan style="color:grey;"><tspan style="font-size: smaller;">SYSTEM Shanghai</tspan></tspan> <br>
+            <tspan style="color:grey;"><tspan style="font-size: smaller;">pics by rain@rrrrrrrain_w</tspan><br><br><br><br><br><br><br>
+        </h2>
+    </div>
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <img id="modalImage" class="modal-image">
+        </div>
+
+    </div>
+
+        <style>
+            /* 缩略图样式 */
+            .image_container img {
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+                .image_container img:hover {
+                    transform: scale(1.1);
+                }
+
+            /* 缩略图样式 */
+            img {
+                margin-right: 0.5vw;
+                height: 100%;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+                img:hover {
+                    transform: scale(1.1); /* 放大效果 */
+                }
+
+            /* Modal styles */
+            .modal {
+                display: none; /* 默认隐藏 */
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8); /* 黑色透明背景 */
+                z-index: 1000;
+                overflow: hidden; /* 确保模态框内内容不会溢出 */
+            }
+
+                .modal img {
+                    position: absolute; /* 用于动态定位 */
+                    max-width: 90vw; /* 最大宽度适配屏幕 */
+                    max-height: 90vh; /* 最大高度适配屏幕 */
+                    border-radius: 10px;
+                    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* 白色发光效果 */
+                    transform: translate(-50%, -50%); /* 基于中心点定位 */
+                }
+        </style>
+
+
+
+        <script>
+            const images = document.querySelectorAll(".clickable-image");
+            const modal = document.getElementById("modal");
+            const modalImage = document.getElementById("modalImage");
+
+            // 点击缩略图时显示模态框
+            images.forEach(img => {
+                img.addEventListener("click", () => {
+                    // 设置模态框图片源
+                    modalImage.src = img.src;
+
+                    // 获取缩略图的中心点位置
+                    const rect = img.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2; // 缩略图中心点 X 坐标
+                    const centerY = rect.top + rect.height / 2; // 缩略图中心点 Y 坐标
+
+                    // 将图片初始位置设置为缩略图中心
+                    modalImage.style.left = `${centerX}px`;
+                    modalImage.style.top = `${centerY}px`;
+
+                    // 等待图片加载后将其移至屏幕中央
+                    setTimeout(() => {
+                        modalImage.style.left = "50%";
+                        modalImage.style.top = "50%";
+                    }, 0);
+
+                    // 显示模态框
+                    modal.style.display = "block";
+                });
+            });
+
+            // 点击模态框关闭
+            modal.addEventListener("click", () => {
+                modal.style.display = "none"; // 隐藏模态框
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
