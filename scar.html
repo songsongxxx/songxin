@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SCAR</title>
+  <link rel="icon" href="sword.jpg" type="image/jpg">
+  <link rel="stylesheet" href="style__projects.css">
+  <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
+  <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('show-content');
+    });
+</script>
+  </head>
+<body>
+    <div class="top_container">
+        <div class="navigation_container">
+            <a href="index.html">
+                <:::::::::::::::::}] back
+            </a>
+
+
+            <a href="resonance.html">
+                <:::::::::::::::::}] previous
+            </a>
+
+            <a href="magic.html">
+                next [{:::::::::::::::::>
+            </a>
+        </div>
+
+        <div class="text_container">
+            <div class="description_container">
+                <div class="title_container">
+                    <h1 style="font-family: SignPainter;"><tspan style="font-size: smaller;">S͟͞C͟͞A͟͞R͟͞</h1>
+                    <h2>ℐ𝓃𝓈𝓉𝒶𝓁𝓁𝒶𝓉𝒾𝑜𝓃</h2>
+                </div>
+                <div class="scroll_container">
+                    <p>
+                        Interface criticism, as articulated by Christian Ulrik Andersen and Soren Bro Pold, explores the impact of ubiquitous screens on our daily lives, influencing perceptions and relationships with society. The senses play a pivotal role in shaping the logic and approach to human thinking, and in the contemporary 'post' era, our senses undergo unconscious modifications. As the current state of affairs continues to evolve, the thought patterns influenced by these changes create a perceptible divergence from past experiences, introducing a delayed yet palpable shift.<br /><br />
+                        The physical presence of scars acts as a perceptual bookmark, reminiscent of the familiarity we develop with scars on the body, continually transformed by the passage of time. These scars become touchpoints that we engage with repeatedly over time.<br /><br />
+                        The MPR121 interfaces with five pins intricately connected to the scar patterns in the finished work, crafted through crocheting and sewing with conductive thread. These patterns function as "switches" – when a viewer touches the scars, the circuit connects, and upon withdrawing the hand, the circuit disconnects. Simultaneously, when the circuit is connected, the corresponding pin communicates with Processing, translating the message into a visually narrated video for the viewer. Furthermore, the water pump component responds to prolonged contact with the scars, with each pin signaling the pump to activate, symbolizing the flow of water throughout the object's entire form as a representation of its life force.<br /><br />
+                        The scar patterns, representing burns, scalds, and surgical scars, are meticulously sewn onto white canvas and leather. The choice of leather, with its spray-painted surface that leaves an irreversible pattern when folded, twisted, or scratched, adds a unique dimension. Additionally, the inherent texture of the leather mimics that of the skin, while the canvas provides a more accommodating surface for sewing. These deliberate fabric choices amplify the tactile and visual elements of the installation.<br /><br />
+                        In essence, the scar patterns are derived from real scars on five different skins, each bearing distinctive marks of injury, such as burns, scalds, and surgical incisions. Through touch, these scars quietly leave traces on the skin over time, creating a profound and nuanced sensory experience for the viewer.<br /><br />
+
+                        *Arduino<br>
+                        *Conductive Wire<br>
+                        *Water Pump
+
+                    </p>
+                </div>
+            </div>
+            <div class="credit_container">
+                <h2>
+                    <tspan style="font-size: smaller;">҉̇͊͑10th February 2022</tspan><br>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div>
+        <div class="bottom_container">
+            <div class="video_container">
+                <video src="Scarphysical computing.mp4" controls autoplay muted loop></video>
+            </div>
+
+            <div class="image_container">
+                <img src="Scarscare-first-pic.png" alt="Description of the image"class="clickable-image">
+                <img src="Scar01.jpg" alt="Description of the image"class="clickable-image">
+                <img src="Scar02.JPG" alt="Description of the image"class="clickable-image">
+                <img src="Scar03.jpg" alt="Description of the image"class="clickable-image">
+                <img src="Scar04.jpg" alt="Description of the image"class="clickable-image">
+                <img src="Scarscare01.png" alt="Description of the image"class="clickable-image">
+                <img src="Scarscare02.png" alt="Description of the image"class="clickable-image">
+                <img src="Scarscare03.png" alt="Description of the image"class="clickable-image">
+                <img src="Scarscare04.png" alt="Description of the image"class="clickable-image">
+                <img src="Scarscare05.png" alt="Description of the image"class="clickable-image">
+            </div>
+
+
+            <div class="others_text" style="margin-bottom: 30%;">
+                <h2>
+                    <tspan style="color:rgb(0, 0, 0);"><tspan style="font-size: smaller;">ℳ𝒶𝓉ℯ𝓇𝒾𝒶𝓁𝓈: </tspan></tspan><br>
+                    <tspan style="color:grey;"><tspan style="font-size: smaller;">leather,water pump，sillicone，fabric</tspan></tspan><br><br><br><br><br><br><br><br>
+
+
+                </h2>
+            </div>
+
+
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <img id="modalImage" class="modal-image">
+        </div>
+
+    </div>
+
+    <style>
+        /* 缩略图样式 */
+        .image_container img {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+            .image_container img:hover {
+                transform: scale(1.1);
+            }
+
+        /* 缩略图样式 */
+        img {
+            margin-right: 0.5vw;
+            height: 100%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+            img:hover {
+                transform: scale(1.1); /* 放大效果 */
+            }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* 黑色透明背景 */
+            z-index: 1000;
+            overflow: hidden; /* 确保模态框内内容不会溢出 */
+        }
+
+            .modal img {
+                position: absolute; /* 用于动态定位 */
+                max-width: 90vw; /* 最大宽度适配屏幕 */
+                max-height: 90vh; /* 最大高度适配屏幕 */
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* 白色发光效果 */
+                transform: translate(-50%, -50%); /* 基于中心点定位 */
+            }
+    </style>
+
+
+
+    <script>
+        const images = document.querySelectorAll(".clickable-image");
+        const modal = document.getElementById("modal");
+        const modalImage = document.getElementById("modalImage");
+
+        // 点击缩略图时显示模态框
+        images.forEach(img => {
+            img.addEventListener("click", () => {
+                // 设置模态框图片源
+                modalImage.src = img.src;
+
+                // 获取缩略图的中心点位置
+                const rect = img.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2; // 缩略图中心点 X 坐标
+                const centerY = rect.top + rect.height / 2; // 缩略图中心点 Y 坐标
+
+                // 将图片初始位置设置为缩略图中心
+                modalImage.style.left = `${centerX}px`;
+                modalImage.style.top = `${centerY}px`;
+
+                // 等待图片加载后将其移至屏幕中央
+                setTimeout(() => {
+                    modalImage.style.left = "50%";
+                    modalImage.style.top = "50%";
+                }, 0);
+
+                // 显示模态框
+                modal.style.display = "block";
+            });
+        });
+
+        // 点击模态框关闭
+        modal.addEventListener("click", () => {
+            modal.style.display = "none"; // 隐藏模态框
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 获取所有可点击的图片
+            const images = document.querySelectorAll(".clickable-image");
+            const modal = document.getElementById("modal");
+            const modalImage = document.getElementById("modalImage");
+
+            images.forEach(img => {
+                img.addEventListener("click", () => {
+                    modalImage.src = img.src; // 设置模态框中的图片
+                    modal.style.display = "block"; // 显示模态框
+                });
+            });
+
+            // 点击模态框关闭
+            modal.addEventListener("click", () => {
+                modal.style.display = "none"; // 隐藏模态框
+            });
+        });
+    </script>
+
+
+
+
+
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('show-content');
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("Script loaded");
+
+            // 获取图片和模态框元素
+            const images = document.querySelectorAll(".clickable-image");
+            const modal = document.getElementById("modal");
+            const modalImage = document.getElementById("modalImage");
+
+            // 检查模态框和图片是否存在
+            if (images.length > 0 && modal && modalImage) {
+                console.log("Images and modal found");
+
+                // 为每张图片添加点击事件
+                images.forEach(img => {
+                    img.addEventListener("click", () => {
+                        console.log("Image clicked:", img.src);
+                        modalImage.src = img.src; // 设置模态框中的图片
+                        modal.style.display = "block"; // 显示模态框
+                    });
+                });
+
+                // 点击模态框时隐藏
+                modal.addEventListener("click", () => {
+                    console.log("Modal clicked: closing");
+                    modal.style.display = "none";
+                });
+            } else {
+                console.error("Required elements not found!");
+            }
+        });
+    </script>
+
+
+
+
+
+</body>
+</html>
