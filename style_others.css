@@ -1,0 +1,223 @@
+
+html, body {
+    height: 100vh;
+    margin: 0%;
+    overflow: auto;
+    background-color: rgb(235, 235, 235);
+}
+
+@font-face {
+    font-family: 'SignPainter';  /* You can use any name you like */
+    src: url('SignPainter.ttf') format('truetype');
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin: 0;
+    color: #333;
+}
+
+h2{
+    font-size: 1.1rem;
+    color: rgb(191, 191, 191);
+    font-style: italic;
+    margin: 0;
+    font-family: "prestige-elite-std", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 600px) {
+    h2 {
+        font-size: 2vw;
+    }
+}
+
+h3{
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+p{
+    font-family: "prestige-elite-std", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+font-family: "prestige-elite-std", monospace;
+font-weight: 400;
+font-style: normal;
+margin-top: 5px;
+margin-bottom: 5px;
+margin-left: 5%;
+margin-right: 5%;
+height: 100%;
+opacity: 0; /* Initially set the content to be invisible */
+transform: translateY(-20px); /* Move the content up by a small amount */
+transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+body.show-content {
+    opacity: 1; /* When the show-content class is added, make the content visible */
+    transform: translateY(0); 
+}
+
+.top_container{
+    height: 28vh;
+}
+
+
+
+.navigation_container{
+    height: 4vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1vw;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(21, 21, 21);
+}
+
+@media only screen and (max-width: 600px){
+    .navigation_container{
+        font-size: 1.6vw;
+    }
+}
+
+.navigation_container a:hover {
+    font-style: italic;
+}
+
+.text_container{
+    margin-top: 1%;
+    display: flex;
+    width: 100%;
+    height: 46vh;
+}
+
+.description_container{
+    width: 50%;
+
+}
+.title_container{
+    width: 100%;
+    height: 25%;
+}
+.scroll_container{
+    width: 100%;
+    height: 70%;
+    overflow-y: auto;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.credit_container{
+    width: 50%;
+    padding-left: 2%;
+}
+
+.others_text{
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+    .others_text {
+        font-size: 1.6vw;
+    }
+}
+
+.video_container{
+    height: 40vh;
+    display: flex;
+    margin-bottom: 1%;
+    overflow-x: auto;
+
+
+}
+
+.image_container{
+    display: flex;
+    overflow-x: auto;
+    height: 48.5vh;
+    margin-bottom: 1%;
+}
+
+img{
+    margin-right: 1vw;
+    height: 100%;
+
+}
+
+video{
+    height: 100%;
+    margin-right: 1vw;
+}
+
+
+/* 滚动条的整体样式 */
+::-webkit-scrollbar {
+    width: 8px; /* 滚动条的宽度 */
+    height: 8px; /* 滚动条的高度（用于水平滚动条） */
+}
+
+/* 滚动条的轨道 */
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #f9f9f9, #ececec); /* 添加渐变背景 */
+    border-radius: 8px; /* 更柔和的圆角 */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* 添加内阴影效果 */
+}
+
+/* 滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #bbb, #999); /* 添加渐变效果 */
+    border-radius: 8px; /* 滑块圆角 */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* 增加内阴影，提升层次感 */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* 平滑的悬停过渡效果 */
+}
+
+    /* 滑块在悬停时的样式 */
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #999, #777); /* 悬停时更深的渐变 */
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); /* 加深阴影 */
+    }
+
+/* 横向滚动条的轨道样式 */
+::-webkit-scrollbar-horizontal {
+    height: 8px; /* 横向滚动条高度 */
+}
+
+/* 横向滚动条的滑块样式 */
+::-webkit-scrollbar-thumb-horizontal {
+    background: linear-gradient(90deg, #bbb, #999); /* 横向滑块的渐变方向调整为水平 */
+}
+
+    /* 水平滚动条的滑块悬停样式 */
+    ::-webkit-scrollbar-thumb-horizontal:hover {
+        background: linear-gradient(90deg, #999, #777); /* 更深的水平渐变 */
+    }
+
+/* 支持暗色模式 */
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(180deg, #333, #444); /* 暗色轨道背景 */
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #666, #444); /* 暗色滑块背景 */
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #444, #222); /* 暗色滑块悬停效果 */
+        }
+}
+
+
+</style >
