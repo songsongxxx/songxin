@@ -23,26 +23,28 @@
 </head>
 
 <body>
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <!-- 左侧翻图标识 -->
-        <span id="leftLabel" class="modal-label"><::::::::::::::::: }] ---- </span>
-
-        <img id="modalImage" class="modal-image">
-
-        <!-- 右侧翻图标识 -->
-        <span id="rightLabel" class="modal-label"> ----[{   :::::::::::::::::></span>
-
-        <!-- <img id="rightImage" src="star_cursor_32px.cur">-->
-        <div id="leftContainer" class="image-container">
-            <!-- 左箭头下方的文字 -->
-            <div id="leftText" class="exit-text">𝘤𝘭𝘪𝘤𝘬 𝘵𝘩𝘦 𝘪𝘮𝘢𝘨𝘦 𝘵𝘰 𝘦𝘹𝘪𝘵</div>
-        </div>
-
-    </div>
-
 
     <div id="body-content">
+
+        <!-- Modal -->
+
+        <div id="modal" class="modal">
+            <!-- 左侧翻图标识 -->
+            <span id="leftLabel" class="modal-label"><::::::::::::::::: }] ---- </span>
+
+            <img id="modalImage" class="modal-image">
+
+            <!-- 右侧翻图标识 -->
+            <span id="rightLabel" class="modal-label"> ----[{   :::::::::::::::::></span>
+
+            <!-- <img id="rightImage" src="star_cursor_32px.cur">-->
+            <div id="leftContainer" class="image-container">
+                <!-- 左箭头下方的文字 -->
+                <div id="leftText" class="exit-text">𝘤𝘭𝘪𝘤𝘬 𝘵𝘩𝘦 𝘪𝘮𝘢𝘨𝘦 𝘵𝘰 𝘦𝘹𝘪𝘵</div>
+            </div>
+
+        </div>
+
 
         <div class="top_container">
             <div class="navigation_container">
@@ -106,15 +108,15 @@
 
 
             </div>
-            <div class="video_container enlarged-horizontal">
-                <img src="church.jpg" alt="Description of the image" class="clickable-image">
+            <div class="video_container">
+                <img src="church.jpg" alt="Description of the image">
 
                 <video src="church01.mov#t=0.1" muted loop controls preload="metadata"></video>
                 <video src="church02.mp4#t=0.1" muted loop controls preload="metadata"></video>
                 <video src="church03.mov#t=0.1" muted loop controls preload="metadata"></video>
                 <video src="church04.MP4#t=0.1" muted loop controls preload="metadata"></video>
                 <video src="church05.mp4#t=0.1" muted loop controls preload="metadata"></video>
-                <video src="church06.MOV#t=0.1" muted loop controls preload="metadata"></video>
+                <!--<video src="church06.MOV#t=0.1" muted loop controls preload="metadata"></video>-->
 
                 <style>
                     video {
@@ -560,24 +562,24 @@
             </script>
 
             <!-- <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    // 获取所有可点击的图片
-                    const images = document.querySelectorAll(".clickable-image");
-                    const modal = document.getElementById("modal");
-                    const modalImage = document.getElementById("modalImage");
+            document.addEventListener('DOMContentLoaded', function () {
+                // 获取所有可点击的图片
+                const images = document.querySelectorAll(".clickable-image");
+                const modal = document.getElementById("modal");
+                const modalImage = document.getElementById("modalImage");
 
-                    images.forEach(img => {
-                        img.addEventListener("click", () => {
-                            modalImage.src = img.src; // 设置模态框中的图片
-                            modal.style.display = "block"; // 显示模态框
-                        });
+                images.forEach(img => {
+                    img.addEventListener("click", () => {
+                        modalImage.src = img.src; // 设置模态框中的图片
+                        modal.style.display = "block"; // 显示模态框
                     });
+                });
 
-                    // 点击模态框关闭
-                    modal.addEventListener("click", () => {
-                        modal.style.display = "none"; // 隐藏模态框
-                    });
-                });</script> -->
+                // 点击模态框关闭
+                modal.addEventListener("click", () => {
+                    modal.style.display = "none"; // 隐藏模态框
+                });
+            });</script> -->
             <!-- <script defer>
                 document.addEventListener('DOMContentLoaded', function () {
                     document.body.classList.add('show-content');
