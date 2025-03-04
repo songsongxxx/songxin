@@ -1,0 +1,192 @@
+
+@font-face {
+    font-family: 'SignPainter';  /* You can use any name you like */
+    src: url('SignPainter.ttf') format('truetype');
+}
+
+
+body {
+font-family: "prestige-elite-std", monospace;
+font-weight: 400;
+font-style: normal;
+margin: 0;
+background-color: rgb(235, 235, 235);
+}
+
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size:20px;
+    display: flex;
+    position: relative;
+    position: sticky;
+    padding-top: 3%;
+    text-decoration: none;
+    z-index: 0;
+}
+
+
+.h-container1 {
+    width: 33.33%;
+    -webkit-box-align: left;
+    -ms-flex-align: left;
+    align-items: left;
+    position:relative;
+    padding-left: 5%;
+    font-size: 1.5vw;
+}
+
+.h-container2 {
+    width: 33.33%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position:relative;
+    text-align: center;
+    font-size: 1.5vw;
+
+}
+
+.h-container3 {
+    width: 33.33%;
+    -webkit-box-align: right;
+    -ms-flex-align: right;
+    align-items: right;
+    position:relative;
+    text-align: right;
+    padding-right: 5%;
+    font-size: 1.5vw;
+
+}
+
+
+
+.tilt__container {
+    position: relative; 
+    width: 45%;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    perspective: 1000px;
+    
+}
+
+
+.tilt__content {
+    position: relative;
+    width: 100%;
+    margin: 0 auto; /* Add this line to center the image horizontally */
+    display: block; /* Add this line to remove any default margins */
+    transition: transform 0.5s ease-out; 
+    transform-style: preserve-3d;
+}
+
+.tilt__container:hover .tilt__content {
+    transform: rotateX(var(--tiltX, 0deg)) rotateY(var(--tiltY, 0deg)) scale(1.000000000000000000000000000000000000000001);
+  }
+
+img{
+    z-index: 99;
+}
+
+
+
+.svg__container{
+    position: absolute;
+    z-index: 100;
+
+}
+
+a text {
+    text-decoration: none;
+    fill: #333;
+    transition: fill 0.3s ease-out; /* Add transition for the fill property */
+  }
+
+a:hover text {
+    font-style:italic;
+  }
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+    .modal img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+
+
+/* 滚动条的整体样式 */
+::-webkit-scrollbar {
+    width: 8px; /* 滚动条的宽度 */
+    height: 8px; /* 滚动条的高度（用于水平滚动条） */
+}
+
+/* 滚动条的轨道 */
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #f9f9f9, #ececec); /* 添加渐变背景 */
+    border-radius: 8px; /* 更柔和的圆角 */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* 添加内阴影效果 */
+}
+
+/* 滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #bbb, #999); /* 添加渐变效果 */
+    border-radius: 8px; /* 滑块圆角 */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* 增加内阴影，提升层次感 */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* 平滑的悬停过渡效果 */
+}
+
+    /* 滑块在悬停时的样式 */
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #999, #777); /* 悬停时更深的渐变 */
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); /* 加深阴影 */
+    }
+
+/* 横向滚动条的轨道样式 */
+::-webkit-scrollbar-horizontal {
+    height: 8px; /* 横向滚动条高度 */
+}
+
+/* 横向滚动条的滑块样式 */
+::-webkit-scrollbar-thumb-horizontal {
+    background: linear-gradient(90deg, #bbb, #999); /* 横向滑块的渐变方向调整为水平 */
+}
+
+    /* 水平滚动条的滑块悬停样式 */
+    ::-webkit-scrollbar-thumb-horizontal:hover {
+        background: linear-gradient(90deg, #999, #777); /* 更深的水平渐变 */
+    }
+
+/* 支持暗色模式 */
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(180deg, #333, #444); /* 暗色轨道背景 */
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #666, #444); /* 暗色滑块背景 */
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #444, #222); /* 暗色滑块悬停效果 */
+        }
+}
