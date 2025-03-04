@@ -1,0 +1,54 @@
+﻿@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+@media (max-width:800px) {
+    ::-webkit-scrollbar {
+        height: 1px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+/* ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+} */
+
+::-webkit-scrollbar-track-piece {
+    background: #ebebeb;
+    border: 0;
+}
+
+.enlarged-horizontal {
+    padding-left: 0px;
+    padding-right:0px;
+}
+
+.enlarged-vertical {
+    padding-top:6px;
+    padding-bottom: 6px;
+}
+
+/* TODO: change url size according to screen resolution */
+html, body {
+    /*
+    cursor: url(star_cursor_32px.cur) 16 16, auto; */
+    
+    cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="32" height="32"%3E%3Ctext x="0" y="20" font-size="20" fill="white"%3E✧%3C/text%3E%3C/svg%3E') 16 16, auto;
+
+}
+
+.show-content::-webkit-scrollbar {
+    display: none;
+}
+
