@@ -12,7 +12,7 @@ let smallMixer;
 let model;
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(155, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0xffffff, 1);
@@ -41,7 +41,7 @@ controls.dampingFactor = 0.05;
 controls.enableZoom = true;
 controls.enablePan = true;
 controls.enableRotate = true;
-controls.minDistance = 0.01;
+
 controls.maxDistance = 100;
 
 // 红色坐标轴

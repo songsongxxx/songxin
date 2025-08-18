@@ -261,54 +261,44 @@ img {
         }
 }
 
-#xin-message {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.1rem;
-  color: #111;
-  padding: 0.2em 0.1em;
-  border-radius: 0.1em;
-  box-shadow: none;
-  display: none;
-  z-index: 600;
-  text-align: center;
-  background: none;
-  max-width: 18em;         /* 控制一行最大宽度，数值可调整 */
-  letter-spacing: -0.04em; /* 字母更紧凑 */
-  word-break: break-word;  /* 必要时断词换行 */
-  white-space: normal;     /* 允许自动换行 */
-}
-
-.red-glow {
-  text-shadow:
-    0 0 16px #ff2222,
-    0 0 32px #ff2222,
-    2px 2px 0 #ff2222,
-    0 2px 12px #ff2222;
-}
-
-@media (max-width: 600px) {
-  #xin-message {
-    font-size: 1.0rem;
-    padding: 0.5em 1em;
-  }
-}
-
 /* 普通黑色粗体 */
 body, * {
     font-weight: bold !important;
-    color: #111 !important;
+    color: #fd5e5e !important;
     text-shadow: none !important;
 }
 
 /* 红色字体和红色外发光 */
 .red-glow-all * {
-    color: #691616 !important; /* 黑色字 */
+    color: #e70000 !important;
     text-shadow:
       0 0 2px #ff2222,
       0 0 4px #ff2222,
       1px 1px 0 #ff2222,
       0 1px 4px #ff2222 !important;
+}
+
+/* 一定要把 #xin-message 放在最后，并加 !important */
+#xin-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+color: #ffbacb !important;
+  font-weight: bold;
+  padding: 0.08em 0.35em;
+  border-radius: 0.5em;
+  box-shadow: none;
+  display: none;
+  z-index: 1000;
+  text-align: center;
+  background: none;
+  max-width: 260px;      /* 新增：最大宽度 */
+  word-break: break-word;/* 新增：自动换行 */
+  text-shadow:
+      0 0 212px #ff2222,
+      0 0 42px #ff2222,
+      1px 1px 0 #ff2222,
+      0 12px 314px #ff2222 !important;
 }
