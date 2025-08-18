@@ -17,8 +17,122 @@
 
     <!-- css fix -->
     <link rel="stylesheet" href="addon.css" />
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script> <!-- GLTF 加载器 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
+
+
+    <!-- ✅ 引入 DRACOLoader -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
+    <!-- ✅ 引入 DOrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<!-- ✅ PointerLockControls 是 Three.js 官方的第一人称视角控制器，能让你用鼠标控制视角，键盘控制走动，像在虚拟世界里自由探索。 -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
 </head>
 
+
+  <style>
+    /* --- 布局与舞台样式 --- */
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: #fff; /* 若想透明，改成 transparent 并在 JS 里设 alpha */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .page {
+      display: grid;
+      grid-template-columns: min(560px, 40vw) 1fr; /* 左侧文字列，右侧舞台列 */
+      height: 100vh;
+      overflow: hidden;
+    }
+    aside.sidebar {
+      border-right: 1px solid #eee;
+      padding: 24px;
+      overflow: auto; /* 文字区域可滚动 */
+    }
+    main.stage {
+      position: relative;
+      overflow: hidden; /* 防止 3D 画面溢出 */
+      background: #fff; /* 舞台底（白）。若用透明，可保持白或去掉 */
+    }
+    /* Three.js 容器铺满右侧 */
+    #three {
+      position: absolute;
+      inset: 0;
+    }
+    /* 让 canvas 自适应容器大小（不要用 window 尺寸） */
+    #three canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    /* 顶部导航（可放左列顶部） */
+    .navigation_container {
+      margin-bottom: 16px;
+    }
+
+    /* Loading 覆盖层 */
+    #loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.8);
+      font: 500 14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      z-index: 9;
+    }
+
+    /* 右下角按钮 */
+    #controls {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #xin-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  color: #111;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  box-shadow: none;
+  display: none;
+  z-index: 1000;
+  text-align: center;
+  background: none;
+  text-shadow:
+    0 0 16px #ff2222,
+    0 0 32px #ff2222,
+    2px 2px 0 #ff2222,
+    0 2px 12px #ff2222;
+}
+
+@media (max-width: 900px) {
+  #xin-message {
+    font-size: 0.4rem;
+    padding: 1em 0.5em;
+  }
+}
+  </style>
+</head>
 <body>
 
     <div id="body-content">
@@ -54,8 +168,8 @@
 
                     </div>
                 </div>
-                <div class="row2">
-                    <div class="column5">
+                <div class="row3">
+                    <div class="column9">
                         <br><br>
                         。･ﾟ𝑺𝑬𝑳𝑬𝑪𝑻𝑬𝑫 𝑭𝑬𝑨𝑻𝑼𝑹𝑬𝑺。･ﾟ<br><br>
 
@@ -96,17 +210,31 @@
                     <div class="column10"></div>
                     <div class="column11"></div>
                 </div>
-                <div class="row4">
-                    <div class="column12" style="font-size: 0.8vw;">
-                        ⁽ﾉ>ω<⁾ﾉ :｡･:*:･ﾟ’★,｡･:*:･ﾟ’☆ Website designed and developed by: <br>
-                            Ria Sarathi
+                <div class="row3">
+                    <div class="column9" style="font-size: 0.6vw;"><br><br><br><br><br><br><br><br>
+                        ⁽ﾉ>ω<⁾ﾉ :｡･:*:･ﾟ’★,｡･:*:･ﾟ’☆ Website designed and developed by: 
+                            Ria Sarathi & xin
                     </div>
                 </div>
 
             </div>
-            <img class="tilt__content" src="about_bio001 copy.png" alt="About Image" style="opacity: 0.5;">
+          <!--   <img class="tilt__content" src="about_bio001 copy.png" alt="About Image" style="opacity: 0.5;">-->
         </div>
     </div>
+
+        <div id="loading">loading...</div>
+
+    <!-- 🌟 控制面板 -->
+    <div id="controls">
+        <span></span>
+    </div>
+        <!-- 3D 渲染 -->
+    <script type="module" src="./about.js"></script>
+
+    <!-- Add this to your HTML body -->
+<div id="xin-message">
+  Hi, I’m Xin! I like making performances, small games, and stories. I also spend time modeling and building with ZBrush, Blender, Substance Painter, Unreal Engine, and Arduino. My work is about testing what a body can do when it meets technology—sometimes breaking, sometimes rebuilding, sometimes just playing.
+</div>
 
 </body>
 
