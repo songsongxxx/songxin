@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CV</title>
     <link rel="icon" href="sword.jpg" type="image/jpg">
     <link rel="stylesheet" href="style_bio.css">
     <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
-
-        <script defer>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById("body-content").classList.add('show-content')
-
-        });
-    </script>
-
-    <!-- css fix -->
     <link rel="stylesheet" href="addon.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script> <!-- GLTF 加载器 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
-
-
-    <!-- ✅ 引入 DRACOLoader -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
-    <!-- ✅ 引入 DOrbitControls -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+    <style>
+        body,
+        button,
+        a,
+        tspan,
+        * {
+            font-family: 'HIDESerif', serif !important;
+        }
 
-<!-- ✅ PointerLockControls 是 Three.js 官方的第一人称视角控制器，能让你用鼠标控制视角，键盘控制走动，像在虚拟世界里自由探索。 -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+        .navigation_container,
+        .image_container,
+        #pdf-viewer-overlay {
+            position: relative;
+            z-index: 10;
+        }
+
+        #pdf-viewer-overlay > .pdf-modal {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 0 16px 0;
+            /* 不要 box-shadow 了 */
+        }
+
+        #pdf-viewer {
+            background: #fff;
+            border-radius: 12px;
+            overflow: auto;
+            max-width: 80vw;
+            max-height: 60vh;
+            padding: 12px;
+            text-align: center;
+            margin: 0 auto;
+            box-shadow: 0 0 32px 4px #ff2222;
+            /* 红色发光只在PDF区域 */
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
 </head>
+
 <body>
-
-
-
     <div class="navigation_container">
         <a href="index.html">
-            <:::::::::::::::::}] back
-        </a>
+            <:::::::::::::::::}] back </a>
     </div>
     <div class="image_container">
         <div class="text_grid">
@@ -48,204 +76,130 @@
                 <div class="column1_new">
 
                     <b style="color: grey;">
-                        <a href="https://drive.google.com/drive/folders/15xvC7bqS-wTGAObbOAuqc9EKpL5sUjfN?usp=sharing" style="color: grey; text-decoration: none;" target="_blank">
-                            <tspan style="font-size: 1vw;">*CV download link</tspan>
+                        <a href="https://drive.google.com/drive/folders/15xvC7bqS-wTGAObbOAuqc9EKpL5sUjfN?usp=sharing"
+                            class="cv-link" target="_blank" style="margin-top: 2.5em; display: inline-block;">
+                            *CV download link
                         </a>
                     </b><br>
 
                 </div>
-
-
-
-                <!--<div class="column2_new">
-
-                    <br> <br> <br> <br><br> <br>
-                    <br> <br><br><br> <br>
-
-                    。･ﾟ･ 𝑬𝑿𝑯𝑰𝑩𝑰𝑻𝑰𝑶𝑵 :̶ <br><br>
-
-                    <b>*The year of sonic confession<br> - outsideininsideout</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Stadt Wehlen/Germany <tspan style="font-size: 0.5vw;"> <br> >></tspan> 17th August 2024</tspan><br>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Slug Gallery/Leipzig <tspan style="font-size: 0.5vw;"> <br> >></tspan> 23rd August 2024</tspan><br><br>
-
-
-                    <b>*Kaugummi im Motherboard</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Erratum Gallery/Berlin <tspan style="font-size: 0.5vw;"> <br> >></tspan> 19 April - 05 May 2024</tspan><br><br>
-
-
-                    <b>*Digital Daydream</b>
-                    <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Artsect Gallery <tspan style="font-size: 0.5vw;"> <br> >></tspan> 17th-19th November 2023</tspan><br><br>
-
-                    <b>*If Splash As Your Whistle</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Ikelectik <tspan style="font-size: 0.5vw;"> <br> >></tspan> 3rd October 2023</tspan><br><br>
-
-                    <b>*London Fashion Week</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Artsect Gallery <tspan style="font-size: 0.5vw;"> <br> >></tspan> 15th-16th September 2023</tspan><br><br>
-
-                    <b>*Future Cave</b>
-                    <br> <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Metre Squared Art Center LDN <tspan style="font-size: 0.5vw;"> <br> >></tspan> 27-28th May 2023</tspan><br><br>
-
-                    <b>*solo show - POTLUCK 01: LDN</b>
-                    <br><tspan style="font-size: 0.5vw;">>></tspan>
-                    <tspan style="font-size: 0.8vw;">2023</tspan><br><br>
-
-                    <b>*Spectacle for later</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Rio Cinema, Dalston LDN <tspan style="font-size: 0.5vw;"> <br> >></tspan> 18th-20th November 2022</tspan><br><br>
-
-                    <b>*SUB-SYSTEMS</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">St James Hatcham Building <tspan style="font-size: 0.5vw;"> <br>  >></tspan> 1st - 4th September 2022</tspan><br>
-                </div>
+                <!--- <img src="bio.png" alt="About Image" style="opacity: 0.3;">-->
 
             </div>
+            <div id="loading">loading...</div>
 
-
-
-            <div class="row2">
-
-                <div class="column2" style="margin-top:6.5%">
-                    。･ﾟ･𝑷𝑹𝑬𝑭𝑶𝑹𝑴𝑨𝑵𝑪𝑬 /  ̶𝑬𝑽𝑬𝑵𝑻:̶ <br> <br>
-                    <b style="color: grey;">* Performance</b><br>
-                    <b>*Boundary Condition</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;"> St James Garlickhythe, London <tspan style="font-size: 0.5vw;"> <br> >></tspan> 22nd February 2025</tspan><br><br>
-
-
-                    <b style="color: grey;">* Performance - Skin and bones </b><br>
-                    <b>*The Now Continuum</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Somers Gallery, London <tspan style="font-size: 0.5vw;"> <br> >></tspan> 11nd February 2025</tspan><br><br>
-
-                    <b style="color: grey;">* Performance</b><br>
-                    <b>*LIGHT FESTIVAL</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;"> Dock 11 digital, Berlin <tspan style="font-size: 0.5vw;"> <br> >></tspan> 19th December 2024</tspan><br><br>
-
-
-                    <b style="color: grey;">*Live Visuals </b><br>
-                    <b>*SNAKES AND LADDERS</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Kunsthaus Kule, Berlin <tspan style="font-size: 0.5vw;"> <br> >></tspan> 8th November 2024</tspan><br><br>
-
-                    <b style="color: grey;">* Performance - Skin and bones </b><br>
-                    <b>*LUNA_1:QNTM_RAVE</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Venue MOT, London <tspan style="font-size: 0.5vw;"> <br> >></tspan> 17th October 2024</tspan><br><br>
-
-
-                    <b style="color: grey;">*Live Visuals</b><br>
-                    <b>*Chant of the eclipse</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Studio.db.Berlin <tspan style="font-size: 0.5vw;"> <br> >></tspan> 5th October 2024</tspan><br><br>
-
-                    <b style="color: grey;">* Set design / Live Visuals</b><br>
-                    <b>*Heaven's Arena</b>
-                    <br>
-                    <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Fire London Vauxhall <tspan style="font-size: 0.5vw;"><br>>></tspan> 21st June 2024</tspan><br><br>
-
-                    <b style="color: grey;">* Costume design</b><br>
-                    <b>*Tide Sound Art * Gossamerfog</b>
-                    <br>
-                    <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Gossamerfog gallery/ London <tspan style="font-size: 0.5vw;"><br>>></tspan> 8th June 2024</tspan><br><br>
-
-
-
-
-                    <b style="color: grey;">* Live Visualsl</b><br>
-                    <b>*Tide Sound Art</b>
-                    <br>
-                    <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Caracol Olol Jackson/ Vicenza <tspan style="font-size: 0.5vw;"><br>>></tspan> 5th Aprile 2024</tspan><br><br
-
-                    <b>*Welcome to the UK</b>
-                    <br>
-                    <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Ugly Duck/ London <tspan style="font-size: 0.5vw;"><br>>></tspan> 16th March 2024</tspan><br><br>
-
-
-                    <b style="color: grey;"> * Live Visuals / Event Curation</b><br>
-                    <b>*Operation RHo1</b>
-                    <br>
-                    <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">SYSTEM Shanghai <tspan style="font-size: 0.5vw;"><br>>></tspan> 14th January 2024</tspan><br><br>
-
-
-                    <b style="color: grey;">* Performance - Skin and bones </b><br>
-                    <b>*Komma & Friends</b>
-                    <br><tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Mariannenplatz Berlin <tspan style="font-size: 0.5vw;"> <br> >></tspan> 16th December 2023 </tspan><br><br>
-
-
-                    <b style="color: grey;">
-                        *Set Design / Wearable Design
-                    </b><br>
-                    <b>*Show at @sissymisfitt’s performance -‘Future Shock’</b><br>
-                    <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Fold LDN <tspan style="font-size: 0.5vw;"><br>>></tspan> 30th November 2023 </tspan><br><br>
-
-                    <b style="color: grey;">* Screening</b><br>
-                    <b>*Tide Sound Art</b><br>
-                    <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Centro Sociale Arcadia,Vicenza <br><tspan style="font-size: 0.5vw;">>></tspan> 28th October 2023</tspan><br><br>
-
-                    <b style="color: grey;">* Performance</b>
-                    <b>*Cheetah Demon, Furry Stratagems to a Clean Forest & Mind</b><br>
-                    <tspan style="font-size: 0.5vw;">></tspan>
-                    <tspan style="font-size: 0.8vw;">Epping Forest, London<br> <tspan style="font-size: 0.5vw;"></tspan>19th August 2023</tspan><br>
-
-
-                </div>
+            <!-- 🌟 控制面板 -->
+            <div id="controls">
+                <span></span>
             </div>
+            <!-- 3D 渲染 -->
+            <script type="module" src="./about.js"></script>
 
 
-            <div class="row1">
-                <div class="column1" style="margin-top:36.5%">
-                    <br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br><br> <br><br> <br><br> <br>
-                    ☆*:・ﾟ。･ﾟ･ ̶A̶w̶a̶r̶d̶s̶: <br> <br>
-                    <b><tspan style="font-size: 0.9vw;">☆*:・ﾟ</tspan> I'm listening - <tspan style="font-size: 0.8vw;"> Accessory Design</tspan> <br> </b>
-                    <tspan style="font-size: 0.9vw;">
-                        <tspan style="color: rgb(72, 72, 72);">Award 360° 100 - Graduation Work of the Year </tspan>   <br>
-                        <tspan style="font-size: 0.5vw;">>></tspan><tspan style="font-size: 0.8vw;"> 2019 </tspan><br> <br>
+            <script>
+                let pdfDoc = null,
+                    pageNum = 1,
+                    pageRendering = false,
+                    pageNumPending = null,
+                    scale = 1.2,
+                    canvas = null,
+                    ctx = null;
 
-                        <b><tspan style="font-size: 0.9vw;">☆*:・ﾟ</tspan> Cozy - <tspan style="font-size: 0.8vw;"> Accessory Design</tspan> <br> </b>
-                        <tspan style="font-size: 0.9vw;">
-                            <tspan style="color: rgb(72, 72, 72);">China international fashion accessories design competition: sliver </tspan>   <br>
-                            <tspan style="font-size: 0.5vw;">>></tspan><tspan style="font-size: 0.8vw;"> 27th August 2019   </tspan><br> <br><br>
+                function renderPage(num) {
+                    pageRendering = true;
+                    pdfDoc.getPage(num).then(function (page) {
+                        let viewport = page.getViewport({ scale: scale });
+                        // 始终只保留一个canvas
+                        let viewer = document.getElementById('pdf-viewer');
+                        let canvas = viewer.querySelector('canvas');
+                        if (!canvas) {
+                            canvas = document.createElement('canvas');
+                            viewer.innerHTML = '';
+                            viewer.appendChild(canvas);
+                        }
+                        let ctx = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
 
-                </div>
-            </div> 
+                        let renderContext = {
+                            canvasContext: ctx,
+                            viewport: viewport
+                        };
+                        let renderTask = page.render(renderContext);
 
-            <div class="row4" style="margin-top:68.5%">
-                <div class="column12" style="font-size: 0.8vw;">
-                    <br><br><br><br><br>
-                    ⁽ﾉ>ω<⁾ﾉ :｡･:*:･ﾟ’★,｡･:*:･ﾟ’☆ Website designed and developed by: <br>
-                    Ria Sarathi
-                </div>
-            </div> -->
+                        renderTask.promise.then(function () {
+                            pageRendering = false;
+                            document.getElementById('page-num').textContent = pageNum;
+                            if (pageNumPending !== null) {
+                                renderPage(pageNumPending);
+                                pageNumPending = null;
+                            }
+                        });
+                    });
+                }
 
+                function queueRenderPage(num) {
+                    if (pageRendering) {
+                        pageNumPending = num;
+                    } else {
+                        renderPage(num);
+                    }
+                }
 
+                function onPrevPage() {
+                    if (pageNum <= 1) return;
+                    pageNum--;
+                    queueRenderPage(pageNum);
+                }
+                function onNextPage() {
+                    if (pageNum >= pdfDoc.numPages) return;
+                    pageNum++;
+                    queueRenderPage(pageNum);
+                }
+
+                document.getElementById('cv-view-btn').onclick = function () {
+                    document.getElementById('pdf-viewer-overlay').style.display = 'flex';
+                    document.getElementById('pdf-viewer').innerHTML = '';
+                    canvas = null;
+                    pageNum = 1;
+                    pdfjsLib.getDocument('cv.pdf').promise.then(function (pdfDoc_) {
+                        pdfDoc = pdfDoc_;
+                        document.getElementById('page-count').textContent = pdfDoc.numPages;
+                        renderPage(pageNum);
+                    });
+                };
+
+                document.getElementById('close-pdf-viewer').onclick = function () {
+                    document.getElementById('pdf-viewer-overlay').style.display = 'none';
+                };
+
+                document.getElementById('prev-page').onclick = onPrevPage;
+                document.getElementById('next-page').onclick = onNextPage;
+            </script>
+        </div> <!-- 关闭 .column1_new -->
+    </div> <!-- 关闭 .row1_new -->
+</div> <!-- 关闭 .text_grid -->
+</div> <!-- 关闭 .image_container -->
+
+<!-- PDF 预览浮层放在这里！ -->
+<div id="pdf-viewer-overlay"
+    style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(255,255,255,0.92); z-index:9999; justify-content:center; align-items:center;">
+    <div class="pdf-modal" style="display: flex; flex-direction: column; align-items: center; position: relative; max-width: 90vw; max-height: 90vh; background: rgba(255,255,255,0.98); border-radius: 18px; box-shadow: 0 0 32px 4px #ff2222;">
+        <button id="close-pdf-viewer"
+            style="position:absolute; top:8px; right:16px; z-index:2; background:none; border:none; color:#ff2222; font-size:1.5rem; cursor:pointer;">×</button>
+        <div class="pdf-toolbar" style="text-align:center; margin: 32px 0 12px 0;">
+            <button id="prev-page" style="margin-right:16px;">‹</button>
+            <span id="page-num">1</span> / <span id="page-count">1</span>
+            <button id="next-page" style="margin-left:16px;">›</button>
         </div>
-       <!--- <img src="bio.png" alt="About Image" style="opacity: 0.3;">-->
-       
+        <div id="pdf-viewer" style="background:#fff; border-radius:12px; overflow:auto; max-width:80vw; max-height:60vh; padding:12px; text-align:center; margin:0 auto; box-shadow: 0 0 32px 4px #ff2222;">
+        </div>
     </div>
-        <div id="loading">loading...</div>
+</div>
 
-    <!-- 🌟 控制面板 -->
-    <div id="controls">
-        <span></span>
-    </div>
-        <!-- 3D 渲染 -->
-    <script type="module" src="./about.js"></script>
-
+<!-- 你的 JS 脚本保持原样 -->
+<script>
+  // ...你的 PDF.js 相关 JS ...
+</script>
 </body>
 </html>

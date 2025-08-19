@@ -11,6 +11,12 @@ html, body {
     font-family: 'SignPainter';  /* You can use any name you like */
     src: url('SignPainter.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'HIDESerif';
+    src: url('HIDESerif 0.9.4.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 b {
     font-weight: bold; /* Set the desired font weight for <b> element */
@@ -59,6 +65,12 @@ position: relative;
 }
 
 
+/* 全局字体和字号统一 */
+body, button, a, tspan, * {
+    font-family: 'HIDESerif', serif !important;
+    font-weight: bold
+}
+
 .navigation_container{
     height: 4vh;
     width: 100%;
@@ -71,9 +83,17 @@ position: relative;
 
 }
 
+.navigation_container a {
+  font-size: 2.2vw !important;
+  font-family: 'HIDESerif', serif !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  letter-spacing: 0.02em;
+}
+
 @media only screen and (max-width: 600px){
     .navigation_container a{
-        font-size: 1.7vw;
+        font-size: 1.8rem !important;
     }
 }
 
@@ -126,7 +146,7 @@ img {
 
 @media only screen and (max-width: 600px){
     .column1{
-        font-size: 1.4vw;
+        font-size: 2vw;
     }
 }
 
@@ -139,7 +159,7 @@ img {
 
 @media only screen and (max-width: 600px){
     .column2{
-        font-size: 1.4vw;
+        font-size: 2vw;
     }
 }
 
@@ -162,7 +182,7 @@ img {
 
 @media only screen and (max-width: 600px){
     .column5{
-        font-size: 1.4vw;
+        font-size: 2vw;
     }
 }
 
@@ -191,7 +211,7 @@ img {
 }
 @media only screen and (max-width: 600px){
     .column9{
-        font-size: 1.4vw;
+        font-size: 2vw;
     }
 }
 
@@ -208,12 +228,6 @@ img {
     height: 8px; /* �������ĸ߶ȣ�����ˮƽ�������� */
 }
 
-/* �������Ĺ�� */
-::-webkit-scrollbar-track {
-    background: linear-gradient(180deg, #f9f9f9, #ececec); /* ���ӽ��䱳�� */
-    border-radius: 8px; /* ����͵�Բ�� */
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* ��������ӰЧ�� */
-}
 
 /* �������Ļ��� */
 ::-webkit-scrollbar-thumb {
@@ -264,7 +278,7 @@ img {
 /* 普通黑色粗体 */
 body, * {
     font-weight: bold !important;
-    color: #fd5e5e !important;
+    color: #333 !important;
     text-shadow: none !important;
 }
 
@@ -272,9 +286,6 @@ body, * {
 .red-glow-all * {
     color: #e70000 !important;
     text-shadow:
-      0 0 2px #ff2222,
-      0 0 4px #ff2222,
-      1px 1px 0 #ff2222,
       0 1px 4px #ff2222 !important;
 }
 
@@ -285,7 +296,7 @@ body, * {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.2rem;
-color: #ffbacb !important;
+  color: #ffbacb !important;
   font-weight: bold;
   padding: 0.08em 0.35em;
   border-radius: 0.5em;
@@ -294,11 +305,22 @@ color: #ffbacb !important;
   z-index: 1000;
   text-align: center;
   background: none;
-  max-width: 260px;      /* 新增：最大宽度 */
-  word-break: break-word;/* 新增：自动换行 */
+  max-width: 260px;
+  word-break: break-word;body {
+    font-family: "prestige-elite-std", monospace;
+
+}
   text-shadow:
       0 0 212px #ff2222,
-      0 0 42px #ff2222,
+      0 0 0px #ff2222,
       1px 1px 0 #ff2222,
       0 12px 314px #ff2222 !important;
+}
+
+@media only screen and (max-width: 600px) {
+  #xin-message {
+    font-size: 0.8rem !important;
+    padding: 0.04em 0.18em !important;
+    max-width: 160px !important;
+  }
 }
