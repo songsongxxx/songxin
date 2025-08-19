@@ -146,7 +146,7 @@
                 <div class="row3">
                     <div class="column9">
                         <br><br>
-                        。･ﾟ𝑺𝑬𝑳𝑬𝑪𝑻𝑬𝑫 𝑭𝑬𝑨𝑻𝑼𝑹𝑬𝑺。･ﾟ<br><br>
+                        。･ﾟ𝑺𝑬𝑳𝑬𝑪𝑻𝑬𝑭𝑬𝑨𝑻𝑼𝑹𝑬𝑺。･ﾟ<br><br>
 
                         <b>
                             。･ﾟ Feature article in
@@ -207,9 +207,15 @@
     <script type="module" src="./about.js"></script>
 
     <!-- Add this to your HTML body -->
-<div id="xin-message">
+<div id="xin-message" style="cursor:pointer;">
   hi, i’m xin — chat with me if you wanna hire me or just hang out
 </div>
+
+<script>
+  document.getElementById('xin-message').onclick = function() {
+    window.open('https://www.instagram.com/songxin.xin/', '_blank');
+  };
+</script>
 
 </body>
 

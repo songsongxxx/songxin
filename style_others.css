@@ -1,5 +1,4 @@
-﻿
-html, body {
+﻿html, body {
     height: 100vh;
     margin: 0%;
     overflow: auto;
@@ -11,11 +10,26 @@ html, body {
     src: url('SignPainter.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'HIDESerif';
+    src: url('HIDESerif 0.9.4.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 全局字体和字号统一 */
+body, button, a, tspan, h1, h2, h3, p, .modal-label, .exit-text, * {
+    font-family: 'HIDESerif', serif !important;
+    font-weight: bold !important;
+    color: #000000 !important;
+    font-size: 1.5vw;
+}
+
 h1 {
     font-size: 1.6rem;
     font-style: italic;
     margin: 0;
-    color: #333;
+    color: #bbbbbb !important; /* 浅灰色 */
 }
 
 @media only screen and (max-width: 600px) {
@@ -57,24 +71,6 @@ p {
     }
 }
 
-/* body {
-    font-family: "prestige-elite-std", monospace;
-    font-weight: 400;
-    font-style: normal;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: 100%;
-    opacity: 0; /* Initially set the content to be invisible */
-/* transform: translateY(-20px); /* Move the content up by a small amount */
-/* transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-} */
-
-/* body.show-content {
-    opacity: 1; /* When the show-content class is added, make the content visible */
-/* transform: translateY(0);
-}  */
 
 #body-content {
     font-family: "prestige-elite-std", monospace;
@@ -151,6 +147,13 @@ a {
 .credit_container {
     width: 50%;
     padding-left: 2%;
+}
+
+.credit_container h2 {
+  font-family: 'HIDESerif', serif !important;
+  color: #6f6f6f !important; /* 或你想要的颜色 */
+  font-size: 1.5vw !important;
+  font-weight: bold !important;
 }
 
 .others_text {
@@ -233,19 +236,24 @@ video {
         background: linear-gradient(90deg, #999, #777); /* 更深的水平渐变 */
     }
 
-/* 支持暗色模式 */
-@media (prefers-color-scheme: dark) {
-    ::-webkit-scrollbar-track {
-        background: linear-gradient(180deg, #333, #444); /* 暗色轨道背景 */
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-    }
 
-    ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #666, #444); /* 暗色滑块背景 */
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+@media only screen and (max-width: 600px) {
+    body, button, a, tspan, h1, h2, h3, p, .modal-label, .exit-text, * {
+        font-size: 0.8rem !important;
+        color: #424242 !important;
     }
+    .navigation_container a {
+        font-size: 1.2rem !important;
+        color: #0e0e0e !important;
+    }
+    h1, h2, h3 {
+        color: #969696 !important;
+    }
+}
+.others_text, .others_text * {
+  color: #838383 !important; /* 或你喜欢的浅灰色 */
+}
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #444, #222); /* 暗色滑块悬停效果 */
-        }
+.description_container .title_container h2 tspan {
+  color: #bbbbbb !important; /* 你想要的浅灰色 */
 }
