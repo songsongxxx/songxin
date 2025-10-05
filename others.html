@@ -185,10 +185,10 @@
                 position: fixed;
                 top: 0;
                 left: 0;
-                width: 120%;
-                height: 100%;
+                right: 0;
+                bottom: 0; /* 全屏覆盖 */
                 background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
-                z-index: 1000;
+                z-index: 10000; /* 保证在最上层 */
                 justify-content: center;
                 align-items: center;
             }
@@ -268,27 +268,23 @@
             /* Modal styles */
             #modal {
                 position: fixed;
-                display: none; /* 默认隐藏 */
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.8); /* 黑色透明背景 */
-                z-index: 99;
-                /* overflow: hidden; /* 确保模态框内内容不会溢出 */
+                display: none;               /* toggled via JS */
+                inset: 0;                    /* top/right/bottom/left = 0 */
+                background-color: rgba(0, 0, 0, 0.8);
+                z-index: 10000;              /* above all overlays */
+                justify-content: center;
+                align-items: center;
             }
 
-                #modal img {
-                    position: absolute; /* 用于动态定位 */
-                    max-width: 90vw; /* 最大宽度适配屏幕 */
-                    max-height: 90vh; /* 最大高度适配屏幕 */
-                    height: auto;
-                    border-radius: 10px;
-                    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* 白色发光效果 */
-                    transform: translate(-50%, -50%); /* 基于中心点定位 */
-                }
+            #modal img {
+                position: static;            /* no absolute positioning */
+                transform: none;             /* no translate */
+                max-width: 90vw;
+                max-height: 90vh;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            }
 
             /* 左右翻图标识 */
             .modal-label {
@@ -364,23 +360,8 @@
                 // 设置模态框图片源
                 modalImage.src = img.src;
 
-                // 获取缩略图的中心点位置
-                const rect = img.getBoundingClientRect();
-                const centerX = rect.left + rect.width / 2; // 缩略图中心点 X 坐标
-                const centerY = rect.top + rect.height / 2; // 缩略图中心点 Y 坐标
-
-                // 将图片初始位置设置为缩略图中心
-                modalImage.style.left = `${centerX}px`;
-                modalImage.style.top = `${centerY}px`;
-
-                // 等待图片加载后将其移至屏幕中央
-                setTimeout(() => {
-                    modalImage.style.left = "50%";
-                    modalImage.style.top = "50%";
-                }, 0);
-
-                // 显示模态框
-                modal.style.display = "block";
+                // 显示模态框（flex 居中）
+                modal.style.display = "flex";
             }
 
             // 点击缩略图时显示模态框
