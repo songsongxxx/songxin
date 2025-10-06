@@ -1,0 +1,321 @@
+html, body {
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+    background-color: #ebebeb;
+    font-family: 'HIDESerif', serif;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'HIDESerif';
+    src: url('/font/HIDESerif 0.9.4.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+b {
+    font-weight: bold; /* Set the desired font weight for <b> element */
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin: 0;
+    color: #333;
+    display: flex;
+    
+}
+
+h2{
+    font-size: 1.4vw;
+
+    color: rgb(191, 191, 191);
+    font-style: italic;
+    margin: 0;
+    font-family: 'HIDESerif', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h3{
+    margin: 0;
+}
+
+p{
+    font-family: 'HIDESerif', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'HIDESerif', serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 100%;
+    position: relative;
+}
+
+/* 全局字体和字号统一 */
+body, button, a, tspan, * {
+    font-family: 'HIDESerif', serif !important;
+    font-weight: bold
+}
+
+.navigation_container{
+    height: 4vh;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 1000;
+    margin: auto;
+    display: flex;
+    position: fixed;
+    font-size: 1.1vw;
+
+}
+
+.navigation_container a {
+  font-size: 2.2vw !important;
+  font-family: 'HIDESerif', serif !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  letter-spacing: 0.02em;
+}
+
+@media only screen and (max-width: 600px){
+    .navigation_container a{
+        font-size: 1.8rem !important;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: grey;
+  }
+
+.navigation_container a:hover {
+    font-style: italic;
+}
+
+.image_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 60%;
+    height: auto; /* Maintain aspect ratio */
+    /* Add any additional styles as needed */
+}
+
+.text_grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 99%;
+    height: 100%;
+    font-size: 1vw;
+    line-height: 160%;
+}
+.row1{
+    display: flex;
+    position: relative;
+    height: 32.3%;
+    width: 100%; 
+    margin-bottom: 8%;
+}
+.column1{
+
+    position: relative;
+    width: 33.9%;
+    height: 100%;
+    margin-right: 18.7%;
+    margin-top: 5%;
+}
+
+@media only screen and (max-width: 600px){
+    .column1{
+        font-size: 2vw;
+    }
+}
+
+.column2{
+    position: relative;
+    width: 15.9%;
+    height: 65%;
+    padding-top: 23%;
+}
+
+@media only screen and (max-width: 600px){
+    .column2{
+        font-size: 2vw;
+    }
+}
+
+
+.row2{
+    position: relative;
+    display: flex;
+    height: 17.5%;
+    width: 100%;
+    margin-bottom: 17%;
+}
+
+.column5{
+
+    position: relative;
+    width: 33.9%;
+    height: 100%;
+    margin-right: 18.7%;
+}
+
+@media only screen and (max-width: 600px){
+    .column5{
+        font-size: 2vw;
+    }
+}
+
+
+.column6{
+ 
+    position: relative;
+    height: 100%;
+    width: 14.8%;
+
+}
+
+.row3{
+
+    position: relative;
+    height: 17%;
+    width: 100%;
+    margin-bottom: 31%;
+}
+
+.column9{
+ position: relative;
+ width: 27.5%;
+ margin-left: auto;
+ height: auto;
+}
+@media only screen and (max-width: 600px){
+    .column9{
+        font-size: 2vw;
+    }
+}
+
+
+.row4{
+    position: relative;
+    height: 1.5%;
+    width: 33.9%;
+}
+
+/* ��������������ʽ */
+::-webkit-scrollbar {
+    width: 8px; /* �������Ŀ��� */
+    height: 8px; /* �������ĸ߶ȣ�����ˮƽ�������� */
+}
+
+
+/* �������Ļ��� */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #bbb, #999); /* ���ӽ���Ч�� */
+    border-radius: 8px; /* ����Բ�� */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* ��������Ӱ��������θ� */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* ƽ������ͣ����Ч�� */
+}
+
+    /* ��������ͣʱ����ʽ */
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #999, #777); /* ��ͣʱ����Ľ��� */
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); /* ������Ӱ */
+    }
+
+/* ����������Ĺ����ʽ */
+::-webkit-scrollbar-horizontal {
+    height: 8px; /* ����������߶� */
+}
+
+/* ����������Ļ�����ʽ */
+::-webkit-scrollbar-thumb-horizontal {
+    background: linear-gradient(90deg, #bbb, #999); /* ���򻬿�Ľ��䷽�����Ϊˮƽ */
+}
+
+    /* ˮƽ�������Ļ�����ͣ��ʽ */
+    ::-webkit-scrollbar-thumb-horizontal:hover {
+        background: linear-gradient(90deg, #999, #777); /* �����ˮƽ���� */
+    }
+
+/* ֧�ְ�ɫģʽ */
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(180deg, #333, #444); /* ��ɫ������� */
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #666, #444); /* ��ɫ���鱳�� */
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #444, #222); /* ��ɫ������ͣЧ�� */
+        }
+}
+
+/* 普通黑色粗体 */
+body, * {
+    font-weight: bold !important;
+    color: #333 !important;
+    text-shadow: none !important;
+}
+
+/* 红色字体和红色外发光 */
+.red-glow-all * {
+    color: #e70000 !important;
+    text-shadow:
+      0 1px 4px #ff2222 !important;
+}
+
+/* 一定要把 #xin-message 放在最后，并加 !important */
+#xin-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #ffbacb !important;
+  font-weight: bold;
+  padding: 0.08em 0.35em;
+  border-radius: 0.5em;
+  box-shadow: none;
+  display: none;
+  z-index: 1000;
+  text-align: center;
+  background: none;
+  max-width: 260px;
+  word-break: break-word;body {
+    font-family: "prestige-elite-std", monospace;
+
+}
+  text-shadow:
+      0 0 212px #ff2222,
+      0 0 0px #ff2222,
+      1px 1px 0 #ff2222,
+      0 12px 314px #ff2222 !important;
+}
+
+@media only screen and (max-width: 600px) {
+  #xin-message {
+    font-size: 0.8rem !important;
+    padding: 0.04em 0.18em !important;
+    max-width: 160px !important;
+  }
+}

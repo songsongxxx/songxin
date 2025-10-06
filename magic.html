@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>THE WORLD OF SALLY</title>
-    <link rel="icon" href="sword.jpg" type="image/jpg">
-    <link rel="stylesheet" href="style__projects.css">
-    <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
+    <link rel="icon" href="assets/sword.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style__projects.css">
     <script defer>
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("body-content").classList.add('show-content')
@@ -16,7 +16,7 @@
     </script>
 
     <!-- css fix -->
-    <link rel="stylesheet" href="addon.css" />
+    <link rel="stylesheet" href="css/addon.css" />
 
 </head>
 <body>
@@ -61,7 +61,7 @@
             <div class="text_container">
                 <div class="description_container">
                     <div class="title_container">
-                        <h1 style="font-family: SignPainter;"><tspan style="font-size: smaller;">T͟͞H͟͞E͟͞ ͟͞W͟͞O͟͞R͟͞L͟͞D͟͞ ͟͞O͟͞F͟͞ ͟͞S͟͞A͟͞L͟͞L͟͞Y͟͞</tspan></h1>
+                        <h1 style="font-family: HIDESerif;"><tspan style="font-size: smaller;">T͟͞H͟͞E͟͞ ͟͞W͟͞O͟͞R͟͞L͟͞D͟͞ ͟͞O͟͞F͟͞ ͟͞S͟͞A͟͞L͟͞L͟͞Y͟͞</tspan></h1>
                         <h2>𝒞𝑜𝓃𝓉𝒾𝓃𝓊𝒾𝓃𝑔 𝓅𝑒𝓇𝒻𝑜𝓇𝓂𝒶𝓃𝒸𝑒</h2>
                     </div>
                     <div class="scroll_container">
@@ -92,16 +92,16 @@
         <div>
             <div class="bottom_container">
                 <div class="video_container">
-                    <video src="Magicporfermance-editedbymalu.mp4" controls autoplay muted loop></video>
+                    <video src="assets/Magicporfermance-editedbymalu.mp4" controls autoplay muted loop></video>
                 </div>
 
                 <div class="image_container">
-                    <img src="Magic01sword.jpg" alt="Description of the image" class="clickable-image">
-                    <img src="Magic02sword.jpg" alt="Description of the image" class="clickable-image">
-                    <img src="Magic03sword+headpiece.JPG" alt="Description of the image" class="clickable-image">
-                    <img src="Magic04.JPG" alt="Description of the image" class="clickable-image">
-                    <img src="Magic05corset.JPG" alt="Description of the image" class="clickable-image">
-                    <img src="Magic06corset.JPG" alt="Description of the image" class="clickable-image"><br><br><br><br><br><br>
+                    <img src="assets/Magic01sword.jpg" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Magic02sword.jpg" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Magic03sword+headpiece.JPG" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Magic04.JPG" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Magic05corset.JPG" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Magic06corset.JPG" alt="Description of the image" class="clickable-image"><br><br><br><br><br><br>
                 </div>
 
                 <div class="others_text" style="margin-bottom: 30%;">
@@ -336,5 +336,26 @@
 
     </div>
 
+    <!-- ASCII cursor (shared) -->
+    <pre id="ascii-cursor" class="ascii-cursor" aria-hidden="true">(\___/)
+ \* */
+  \ /
+   ¤    </pre>
+    <script>
+      (function () {
+        const el = document.getElementById('ascii-cursor');
+        if (!el) return;
+        const frameOpen = ["(\\___/)", " \\* */", "  \\ /", "   ¤    "].join("\n");
+        const frameBlink = ["(\\___/)", " \\^ ^/", "  \\ /", "   *    "].join("\n");
+        el.textContent = frameOpen;
+        function doBlinkOnce(){ el.textContent = frameBlink; setTimeout(()=>{ el.textContent = frameOpen; },120); }
+        (function schedule(){ setTimeout(()=>{ if (Math.random()<0.25){ doBlinkOnce(); setTimeout(doBlinkOnce,220);} else { doBlinkOnce(); } schedule(); }, 2000+Math.random()*5000); })();
+        const move = (e)=>{ el.style.left = e.clientX+'px'; el.style.top = e.clientY+'px'; el.style.opacity = '1'; };
+        document.addEventListener('mousemove', move);
+        document.addEventListener('mouseleave', ()=>{ el.style.opacity = '0'; });
+        document.addEventListener('mouseenter', ()=>{ el.style.opacity = '1'; });
+      })();
+    </script>
 </body>
 </html>
+``` 

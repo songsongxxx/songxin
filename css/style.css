@@ -1,0 +1,351 @@
+@font-face {
+  font-family: 'HIDESerif';
+  src: url('../font/HIDESerif 0.9.4.otf') format('opentype'); /* fix: correct relative path from css/ to font/ */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* ensure text shows quickly with fallback, then swaps */
+}
+
+/* use HIDESerif as the site default */
+:root {
+  --font-body: "HIDESerif"; /* remove fallbacks */
+}
+
+html, body, svg, text, tspan, a, p, h1, h2, h3, h4, h5, h6, pre, span, div {
+  font-family: var(--font-body) !important;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  background-color: rgb(235, 235, 235);
+  cursor: none;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size:20px;
+    display: flex;
+    position: sticky;
+    padding-top: 3%;
+    text-decoration: none;
+    z-index: 0;
+}
+
+
+.h-container1 {
+    width: 33.33%;
+    -webkit-box-align: left;
+    -ms-flex-align: left;
+    align-items: left;
+    position:relative;
+    padding-left: 5%;
+    font-size: 1.5vw;
+}
+
+.h-container2 {
+    width: 33.33%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position:relative;
+    text-align: center;
+    font-size: 1.5vw;
+
+}
+
+.h-container3 {
+    width: 33.33%;
+    -webkit-box-align: right;
+    -ms-flex-align: right;
+    align-items: right;
+    position:relative;
+    text-align: right;
+    padding-right: 5%;
+    font-size: 1.5vw;
+
+}
+
+
+
+.tilt__container {
+    position: relative; 
+    width: 45%;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    perspective: 1000px;
+    
+}
+
+
+.tilt__content {
+    position: relative;
+    width: 100%;
+    margin: 0 auto; /* Add this line to center the image horizontally */
+    display: block; /* Add this line to remove any default margins */
+    transition: transform 0.5s ease-out; 
+    transform-style: preserve-3d;
+}
+
+.tilt__container:hover .tilt__content {
+    transform: rotateX(var(--tiltX, 0deg)) rotateY(var(--tiltY, 0deg)) scale(1.000000000000000000000000000000000000000001);
+  }
+
+img{
+    z-index: 99;
+}
+
+
+
+.svg__container{
+    position: absolute;
+    z-index: 100;
+
+}
+
+a text {
+    text-decoration: none;
+    fill: #333;
+    transition: fill 0.3s ease-out; /* Add transition for the fill property */
+  }
+
+a:hover text {
+    font-style:italic;
+  }
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+    .modal img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 48px; /* more round */
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+
+.modal { cursor: auto; padding: 24px; }
+.modal.show { display: flex; } /* toggle via JS */
+
+.modal figure { margin: 0; text-align: center; }
+.modal figcaption {
+  margin-top: 12px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Hide ASCII cursor when modal open */
+.modal-open .ascii-cursor { display: none; }
+
+
+/* ��������������ʽ */
+::-webkit-scrollbar {
+    width: 8px; /* �������Ŀ��� */
+    height: 8px; /* �������ĸ߶ȣ�����ˮƽ�������� */
+}
+
+/* �������Ĺ�� */
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #f9f9f9, #ececec); /* ���ӽ��䱳�� */
+    border-radius: 8px; /* ����͵�Բ�� */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* ��������ӰЧ�� */
+}
+
+/* �������Ļ��� */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #bbb, #999); /* ���ӽ���Ч�� */
+    border-radius: 8px; /* ����Բ�� */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* ��������Ӱ��������θ� */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* ƽ������ͣ����Ч�� */
+}
+
+    /* ��������ͣʱ����ʽ */
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #999, #777); /* ��ͣʱ����Ľ��� */
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); /* ������Ӱ */
+    }
+
+/* ����������Ĺ����ʽ */
+::-webkit-scrollbar-horizontal {
+    height: 8px; /* ����������߶� */
+}
+
+/* ����������Ļ�����ʽ */
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #444, #222); /* ��ɫ������ͣЧ�� */
+        }
+
+/* utility classes for cleaned header markup */
+.subtitle {
+  color: rgb(155, 155, 155);
+  font-style: italic;
+  margin: 0;
+}
+
+.ascii {
+  color: #b8b8b8;
+  font-family: var(--font-body); /* remove fallback */
+}
+
+.ascii-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(8px, 8px); /* slight offset from pointer center */
+  pointer-events: none;
+  z-index: 9999;
+  white-space: pre;
+  font-family: var(--font-body); /* was monospace; unify per request */
+  line-height: 1;
+  font-size: 14px;
+  color: #333;
+  opacity: 0.9;
+  user-select: none;
+  transition: opacity 0.15s ease;
+}
+
+/* header link styles (replace inline colors) */
+.header a {
+  color: #333;
+  text-decoration: none;
+  font-family: var(--font-body); /* remove fallback */
+}
+
+/* Disable custom cursor on touch devices */
+@media (hover: none), (pointer: coarse) {
+  body { cursor: auto; }
+  .ascii-cursor { display: none; }
+}
+
+/* Centered hover preview styles */
+.hover-preview {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;            /* don’t block interactions */
+  z-index: 9998;                   /* below ASCII cursor (9999) */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 150ms ease, visibility 150ms ease;
+}
+
+.hover-preview.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hover-preview figure {
+  display: flex;
+  flex-direction: column;   /* stack: image on top, caption below */
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.5vw, 18px);
+  text-align: center;
+}
+
+.hover-preview img {
+  max-width: 80vw;          /* allow larger image when centered */
+  max-height: 70vh;
+  border-radius: clamp(48px, 6vw, 120px); /* more round */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 18px rgba(255, 0, 0, 0.35);
+}
+
+.hover-preview figcaption {
+  margin-top: 0;
+  text-align: center;       /* center caption */
+  max-width: 80vw;          /* no right-side text box */
+  color: #000;                 /* black text */
+  font-size: 14px;             /* base; title will override */
+  line-height: 1.4;
+  text-shadow: none;           /* handled on spans below */
+}
+
+@media (max-width: 900px) {
+  .hover-preview figure {
+    flex-direction: column;
+    gap: clamp(8px, 1.5vw, 18px);
+  }
+  .hover-preview img { max-width: 80vw; }
+  .hover-preview figcaption { max-width: 90vw; text-align: center; }
+}
+
+/* Title: larger and stronger red glow */
+.hover-preview figcaption .hp-title {
+  display: block;
+  font-weight: 700;
+  font-size: clamp(20px, 2.4vw, 32px);
+  color: #000;
+  text-shadow:
+    0 0 4px rgba(255, 0, 0, 0.80),
+    0 0 22px rgba(255, 0, 0, 0.60),
+    0 0 46px rgba(255, 0, 0, 0.50);
+}
+
+/* Subtitle: smaller than title */
+.hover-preview figcaption .hp-subtitle {
+  display: block;
+  margin-top: 6px;
+  font-weight: 700; /* same as title */
+  font-size: clamp(14px, 1.8vw, 22px); /* smaller */
+  color: #000;
+  line-height: 1.35;
+  text-shadow:
+    0 0 3px rgba(0, 0, 0, 0.85),
+    0 0 6px rgba(255, 0, 0, 0.90),
+    0 0 24px rgba(255, 0, 0, 0.70),
+    0 0 52px rgba(255, 0, 0, 0.55);
+}
+
+/* Year: larger for emphasis */
+.hover-preview figcaption .hp-year {
+  display: inline-block;
+  margin-left: 4px;
+  font-weight: 600;
+  font-size: clamp(18px, 2.2vw, 30px); /* bigger */
+  color: #000;
+  text-shadow:
+    0 0 3px rgba(255, 0, 0, 0.70),
+    0 0 16px rgba(255, 0, 0, 0.45),
+    0 0 32px rgba(255, 0, 0, 0.35);
+}
+
+/* Hide ASCII cursor while preview is visible */
+.preview-open .ascii-cursor { display: none; }
+
+/* Optional helper if you ever need to strictly force HIDESerif (no fallback):
+.strict-hideserif { font-family: "HIDESerif" !important; } */
+
+/* Optional helper to style normal letters as superscripts (no Unicode needed):
+.sup-sim { font-variant-position: super; font-size: 0.8em; } */

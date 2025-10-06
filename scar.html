@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SCAR</title>
-    <link rel="icon" href="sword.jpg" type="image/jpg">
-    <link rel="stylesheet" href="style__projects.css">
-    <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
+    <link rel="icon" href="assets/sword.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style__projects.css">
     <script defer>
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("body-content").classList.add('show-content')
@@ -16,7 +16,7 @@
     </script>
 
     <!-- css fix -->
-    <link rel="stylesheet" href="addon.css" />
+    <link rel="stylesheet" href="css/addon.css" />
 
 </head>
 <body>
@@ -40,7 +40,7 @@
 
     </div>
 
-    <div id="body-content">
+    <div id="body-content" class="page-hypersensitivity">
 
         <div class="top_container">
             <div class="navigation_container">
@@ -61,7 +61,7 @@
             <div class="text_container">
                 <div class="description_container">
                     <div class="title_container">
-                        <h1 style="font-family: SignPainter;"><tspan style="font-size: smaller;">SCARS</tspan></h1>
+                        <h1 style="font-family: HIDESerif;"><tspan style="font-size: smaller;">SCARS</tspan></h1>
                         <h2>ℐ𝓃𝓈𝓉𝒶𝓁𝓁𝒶𝓉𝒾𝑜𝓃</h2>
                     </div>
                     <div class="scroll_container">
@@ -92,20 +92,20 @@
         <div>
             <div class="bottom_container">
                 <div class="video_container">
-                    <video src="Scarphysical computing.mp4" controls autoplay muted loop></video>
+                    <video src="assets/Scarphysical computing.mp4" controls autoplay muted loop></video>
                 </div>
 
                 <div class="image_container">
-                    <img src="Scarscare-first-pic.png" alt="Description of the image" class="clickable-image">
-                    <img src="Scar01.jpg" alt="Description of the image" class="clickable-image">
-                    <img src="Scar02.JPG" alt="Description of the image" class="clickable-image">
-                    <img src="Scar03.jpg" alt="Description of the image" class="clickable-image">
-                    <img src="Scar04.jpg" alt="Description of the image" class="clickable-image">
-                    <img src="Scarscare01.png" alt="Description of the image" class="clickable-image">
-                    <img src="Scarscare02.png" alt="Description of the image" class="clickable-image">
-                    <img src="Scarscare03.png" alt="Description of the image" class="clickable-image">
-                    <img src="Scarscare04.png" alt="Description of the image" class="clickable-image">
-                    <img src="Scarscare05.png" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scarscare-first-pic.png" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scar01.jpg" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scar02.JPG" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scar03.jpg" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scar04.jpg" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scarscare01.png" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scarscare02.png" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scarscare03.png" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scarscare04.png" alt="Description of the image" class="clickable-image">
+                    <img src="assets/Scarscare05.png" alt="Description of the image" class="clickable-image">
                 </div>
 
 
@@ -340,6 +340,26 @@
 
     </div>
 
-
+    <!-- ASCII cursor (shared) -->
+    <pre id="ascii-cursor" class="ascii-cursor" aria-hidden="true">(\___/)
+ \* */
+  \ /
+   ¤    </pre>
+    <script>
+      (function () {
+        const el = document.getElementById('ascii-cursor');
+        if (!el) return;
+        const frameOpen = ["(\\___/)", " \\* */", "  \\ /", "   ¤    "].join("\n");
+        const frameBlink = ["(\\___/)", " \\^ ^/", "  \\ /", "   *    "].join("\n");
+        el.textContent = frameOpen;
+        function doBlinkOnce(){ el.textContent = frameBlink; setTimeout(()=>{ el.textContent = frameOpen; },120); }
+        (function schedule(){ setTimeout(()=>{ if (Math.random()<0.25){ doBlinkOnce(); setTimeout(doBlinkOnce,220);} else { doBlinkOnce(); } schedule(); }, 2000+Math.random()*5000); })();
+        const move = (e)=>{ el.style.left = e.clientX+'px'; el.style.top = e.clientY+'px'; el.style.opacity = '1'; };
+        document.addEventListener('mousemove', move);
+        document.addEventListener('mouseleave', ()=>{ el.style.opacity = '0'; });
+        document.addEventListener('mouseenter', ()=>{ el.style.opacity = '1'; });
+      })();
+    </script>
 </body>
 </html>
+``` 

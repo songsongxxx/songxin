@@ -1,0 +1,253 @@
+html, body {
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+    background-color: #fff;
+    font-family: 'HIDESerif', serif !important;
+}
+
+@font-face {
+    font-family: 'HIDESerif';
+    src: url('/font/HIDESerif 0.9.4.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'HIDESerif', serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    height: 100%;
+    position: relative;
+}
+
+b {
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin: 0;
+    color: #333;
+    display: flex;
+    font-family: 'HIDESerif', serif !important;
+}
+
+h2 {
+    font-size: 1.4vw;
+    color: rgb(191, 191, 191);
+    font-style: italic;
+    margin: 0;
+    font-family: 'HIDESerif', serif;
+    font-weight: 400;
+}
+
+h3 {
+    margin: 0;
+    font-family: 'HIDESerif', serif !important;
+}
+
+p {
+    font-family: 'HIDESerif', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navigation_container {
+    height: 4vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.2vw;
+}
+
+.navigation_container a {
+    font-size: 2.2vw;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'HIDESerif', serif !important;
+}
+
+@media only screen and (max-width: 600px) {
+    html, body {
+        font-size: 12px !important;
+    }
+    h1, h2, h3 {
+        font-size: 0.9rem !important;
+    }
+    p, b, tspan, .column1_new, .column2, .column12 {
+        font-size: 1rem !important;
+    }
+    .navigation_container,
+    .navigation_container a {
+        font-size: 2.2rem !important;
+    }
+}
+
+.image_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.text_grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 99%;
+    height: 100%;
+    font-size: 1vw;
+    line-height: 160%;
+}
+
+/* 只保留一份 a 样式 */
+a {
+    text-decoration: none;
+    color: grey;
+    font-family: 'HIDESerif', serif !important;
+}
+
+/* 主要列和行的响应式字体 */
+.column1, .column2, .column5, .column6, .column9, .column10 {
+    font-size: 1.1vw;
+    font-family: 'HIDESerif', serif !important;
+}
+@media only screen and (max-width: 600px) {
+    .column1, .column2, .column5, .column6, .column9, .column10 {
+        font-size: 1.1vw;
+    }
+}
+
+/* PDF 预览相关 */
+
+
+
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+}
+
+.cv-link {
+  font-family: 'HIDESerif', serif;
+  font-size: 1.8vw;      /* 比导航小，比正文大 */
+  color: grey;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0.5vw 0 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 600px) {
+  .cv-link {
+    font-size: 1.5rem !important; /* 手机端更大 */
+  }
+}
+
+/* PDF.js浮层样式 */
+#pdf-viewer-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(255,255,255,0.92);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+#pdf-viewer-overlay > div {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+  background: rgba(255,255,255,0.98);
+  border-radius: 18px;
+  box-shadow: 0 0 32px 4px #ff2222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 16px 0;
+}
+#pdf-viewer {
+  background: #fff;
+  border-radius: 12px;
+  overflow: auto;
+  max-width: 80vw;
+  max-height: 60vh;
+  padding: 12px;
+  text-align: center;
+  margin: 0 auto;
+}
+#pdf-viewer-overlay button,
+#pdf-viewer-overlay #prev-page,
+#pdf-viewer-overlay #next-page {
+  font-size: 1.3rem;
+  color: #ff2222;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid #ff2222;
+  border-radius: 6px;
+  padding: 4px 16px;
+  margin: 8px 8px 8px 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: 'HIDESerif', serif;
+}
+#pdf-viewer-overlay button:hover {
+  background: #ff2222;
+  color: #fff;
+}
+#close-pdf-viewer {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 2rem;
+  z-index: 10;
+  background: none;
+  border: none;
+  color: #ff2222;
+  cursor: pointer;
+  padding: 0 12px;
+}
+#pdf-viewer-overlay div[style*="text-align:center"] {
+  margin-top: 48px !important;
+}
+
+/* 移动端适配 */
+@media only screen and (max-width: 600px) {
+  #pdf-viewer-overlay > div {
+    max-width: 98vw !important;
+    max-height: 98vh !important;
+    border-radius: 10px !important;
+    padding: 0 !important;
+  }
+  #pdf-viewer {
+    max-width: 96vw !important;
+    max-height: 50vh !important;
+    padding: 4px !important;
+  }
+  #pdf-viewer-overlay button,
+  #pdf-viewer-overlay #prev-page,
+  #pdf-viewer-overlay #next-page {
+    font-size: 2rem !important;
+    padding: 10px 22px !important;
+    margin: 8px 8px 8px 0 !important;
+  }
+  #close-pdf-viewer {
+    top: 6px !important;
+    right: 8px !important;
+    font-size: 2.5rem !important;
+  }
+}
+
+

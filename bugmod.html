@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>BUG MOD</title>
-    <link rel="icon" href="sword.jpg" type="image/jpg">
-    <link rel="stylesheet" href="style__projects.css">
-    <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
-    <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css">
+    <link rel="icon" href="assets/sword.jpg" type="image/jpg">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style__projects.css">
+    <!-- removed Typekit to enforce HIDESerif only -->
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/iip6ucd.css"> -->
     <script defer>
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("body-content").classList.add('show-content')
@@ -17,7 +18,7 @@
     </script>
 
     <!-- css fix -->
-    <link rel="stylesheet" href="addon.css" />
+    <link rel="stylesheet" href="css/addon.css" />
 
 </head>
 
@@ -41,7 +42,7 @@
 
     </div>
 
-    <div id="body-content">
+    <div id="body-content" class="page-hypersensitivity">
 
         <div class="top_container">
             <div class="navigation_container">
@@ -61,7 +62,7 @@
             <div class="text_container">
                 <div class="description_container">
                     <div class="title_container">
-                        <h1 style="font-family: SignPainter;"><tspan style="font-size: smaller;">BUG MOD</tspan></h1>
+                        <h1 style="font-family: HIDESerif;"><tspan style="font-size: smaller;">BUG MOD</tspan></h1>
                         <h2><tspan style="color: darkgrey;">𝒱𝒾𝒹𝑒𝑜 𝑔𝒶𝓂𝑒</tspan></h2>
                     </div>
                     <div class="scroll_container">
@@ -168,16 +169,16 @@
         <!-- 视频区域 -->
         <div class="bottom_container">
             <div class="video_container">
-                <video src="TRAILER_with_Gameplay.mp4" controls autoplay muted loop></video>
+                <video src="assets/TRAILER_with_Gameplay.mp4" controls autoplay muted loop></video>
             </div>
 
 
             <!-- 第0组图片 -->
             <div class="image_container">
-                <img src="1bugmodEskapismus, Kaugummi im Motherboard.png" alt="Description of the image" class="clickable-image">
-                <img src="2bugmodEskapismus, Kaugummi im Motherboard.png" alt="Description of the image" class="clickable-image">
-                <img src="3bugmodEskapismus, Kaugummi im Motherboard.png" alt="Description of the image" class="clickable-image">
-                <img src="4bugmodEskapismus, Kaugummi im Motherboard.png" alt="Description of the image" class="clickable-image">
+                <img src="assets/1bugmodEskapismus, Kaugummi im Motherboard.png" alt="Description of the image" class="clickable-image">
+                <img src="assets/2bugmodEskapismus, Kaugummi im Motherboard.png" alt="Description of the image" class="clickable-image">
+                <img src="assets/3bugmodEskapismus, Kaugummi im Motherboard.png" alt="Description of the image" class="clickable-image">
+                <img src="assets/4bugmodEskapismus, Kaugummi im Motherboard.png" alt="Description of the image" class="clickable-image">
             </div>
 
             <!-- 第0组文字 -->
@@ -192,9 +193,9 @@
 
             <!-- 第一组图片 -->
             <div class="image_container">
-                <img src="bug01.JPG" alt="Description of the image" class="clickable-image">
-                <img src="bug02.JPG" alt="Description of the image" class="clickable-image">
-                <img src="bug03.JPG" alt="Description of the image" class="clickable-image">
+                <img src="assets/bug01.JPG" alt="Description of the image" class="clickable-image">
+                <img src="assets/bug02.JPG" alt="Description of the image" class="clickable-image">
+                <img src="assets/bug03.JPG" alt="Description of the image" class="clickable-image">
             </div>
 
             <!-- 第一组文字 -->
@@ -209,9 +210,9 @@
 
             <!-- 第二组图片 -->
             <div class="image_container">
-                <img src="bug101.JPG" alt="Description of the image" class="clickable-image">
-                <img src="bug102.JPG" alt="Description of the image" class="clickable-image">
-                <img src="bug103.JPG" alt="Description of the image" class="clickable-image">
+                <img src="assets/bug101.JPG" alt="Description of the image" class="clickable-image">
+                <img src="assets/bug102.JPG" alt="Description of the image" class="clickable-image">
+                <img src="assets/bug103.JPG" alt="Description of the image" class="clickable-image">
             </div>
             <!-- 第3组文字 -->
             <div class="others_text">
@@ -441,6 +442,25 @@
 
     </div>
 
-
+    <!-- ASCII cursor (shared) -->
+    <pre id="ascii-cursor" class="ascii-cursor" aria-hidden="true">(\___/)
+ \* */
+  \ /
+   ¤    </pre>
+    <script>
+      (function () {
+        const el = document.getElementById('ascii-cursor');
+        if (!el) return;
+        const frameOpen = ["(\\___/)", " \\* */", "  \\ /", "   ¤    "].join("\n");
+        const frameBlink = ["(\\___/)", " \\^ ^/", "  \\ /", "   *    "].join("\n");
+        el.textContent = frameOpen;
+        function doBlinkOnce(){ el.textContent = frameBlink; setTimeout(()=>{ el.textContent = frameOpen; },120); }
+        (function schedule(){ setTimeout(()=>{ if (Math.random()<0.25){ doBlinkOnce(); setTimeout(doBlinkOnce,220);} else { doBlinkOnce(); } schedule(); }, 2000+Math.random()*5000); })();
+        const move = (e)=>{ el.style.left = e.clientX+'px'; el.style.top = e.clientY+'px'; el.style.opacity = '1'; };
+        document.addEventListener('mousemove', move);
+        document.addEventListener('mouseleave', ()=>{ el.style.opacity = '0'; });
+        document.addEventListener('mouseenter', ()=>{ el.style.opacity = '1'; });
+      })();
+    </script>
 </body>
 </html>
