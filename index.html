@@ -454,12 +454,12 @@
                     }
 
                     function scheduleBlink() {
-                        const delay = 2000 + Math.random() * 5000; // 2–7s
+                        const delay = 800 + Math.random() * 1800; // faster: 0.8–2.6s
                         setTimeout(() => {
-                            // 25% chance to do a cute double-blink
-                            if (Math.random() < 0.25) {
+                            // 50% chance to do a cute double-blink
+                            if (Math.random() < 0.5) {
                                 doBlinkOnce();
-                                setTimeout(doBlinkOnce, 220);
+                                setTimeout(doBlinkOnce, 180);
                             } else {
                                 doBlinkOnce();
                             }

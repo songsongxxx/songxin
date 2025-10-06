@@ -119,7 +119,7 @@ wandering the space between rupture and reconstruction.
                     <h2>
                         <a href="https://www.transmediaresearch.institute/" target="_blank"
                             style="color: darkgrey; text-decoration: none;">
-                             𝒯𝓇𝒶𝓃𝓈𝓂𝑒𝒹𝒾𝒶 ℛ𝑒𝓈𝑒𝒶𝓇𝒸𝒽 ℐ𝓃𝓈𝓉𝒾𝓉𝓊𝓉𝑒
+                              𝒯𝓇𝒶𝓃𝓈𝓂𝑒𝒹𝒾𝒶 ℛ𝑒𝓈𝑒𝒶𝓇𝒸𝒽 ℐ𝓃𝓈𝓉𝒾𝓉𝓊𝓉𝑒
                         </a><br>
                         <tspan style="font-size: smaller;">҉̇͊͑June 27th 2025 </tspan><br>
                         <tspan style="font-size: smaller;">
@@ -551,7 +551,12 @@ wandering the space between rupture and reconstruction.
         const frameBlink = ["(\\___/)", " \\^ ^/", "  \\ /", "   *    "].join("\n");
         el.textContent = frameOpen;
         function doBlinkOnce(){ el.textContent = frameBlink; setTimeout(()=>{ el.textContent = frameOpen; },120); }
-        (function schedule(){ setTimeout(()=>{ if (Math.random()<0.25){ doBlinkOnce(); setTimeout(doBlinkOnce,220);} else { doBlinkOnce(); } schedule(); }, 2000+Math.random()*5000); })();
+        (function schedule(){
+          setTimeout(()=>{
+            if (Math.random()<0.5){ doBlinkOnce(); setTimeout(doBlinkOnce,180);} else { doBlinkOnce(); }
+            schedule();
+          }, 800+Math.random()*1800);
+        })();
         const move = (e)=>{ el.style.left = e.clientX+'px'; el.style.top = e.clientY+'px'; el.style.opacity = '1'; };
         document.addEventListener('mousemove', move);
         document.addEventListener('mouseleave', ()=>{ el.style.opacity = '0'; });
@@ -560,4 +565,3 @@ wandering the space between rupture and reconstruction.
     </script>
 </body>
 </html>
-``` 

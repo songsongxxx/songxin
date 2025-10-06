@@ -122,13 +122,13 @@
             <div class="bottom_container">
 
                 <div class="video_container">
-                    <video src="MOT.mp4" controls autoplay muted loop></video>
+                    <video src="assets/MOT.mp4" controls autoplay muted loop></video>
                 </div>
 
                 <div class="image_container">
-                    <img src="skin and bonesMOT.jpg" alt="Image 1" class="clickable-image">
-                    <img src="skinandbones3-2.jpg" alt="Image 2" class="clickable-image">
-                    <img src="skinandbones3.jpg" alt="Image 3" class="clickable-image">
+                    <img src="assets/skin and bonesMOT.jpg" alt="Image 1" class="clickable-image">
+                    <img src="assets/skinandbones3-2.jpg" alt="Image 2" class="clickable-image">
+                    <img src="assets/skinandbones3.jpg" alt="Image 3" class="clickable-image">
                 </div>
 
                 <div class="others_text" style="margin-bottom: 30%;">
@@ -363,9 +363,38 @@
 
         </script>
 
+        <!-- ASCII cursor (added) -->
+        <style>
+            .ascii-cursor { position: fixed; pointer-events: none; top: 0; left: 0; opacity: 0; white-space: pre; z-index: 9999; }
+        </style>
+        <pre id="ascii-cursor" class="ascii-cursor" aria-hidden="true">(\___/)
+ \* */
+  \ /
+   ¤    </pre>
+        <script>
+            (function () {
+                const el = document.getElementById('ascii-cursor');
+                if (!el) return;
+                const frameOpen = ["(\\___/)", " \\* */", "  \\ /", "   ¤    "].join("\n");
+                const frameBlink = ["(\\___/)", " \\^ ^/", "  \\ /", "   *    "].join("\n");
+                el.textContent = frameOpen;
+                function doBlinkOnce(){ el.textContent = frameBlink; setTimeout(()=>{ el.textContent = frameOpen; },120); }
+                (function schedule(){
+                    setTimeout(()=>{
+                        if (Math.random() < 0.5) { doBlinkOnce(); setTimeout(doBlinkOnce,180); } else { doBlinkOnce(); }
+                        schedule();
+                    }, 800 + Math.random()*1800);
+                })();
+                const move = (e)=>{ el.style.left = e.clientX+'px'; el.style.top = e.clientY+'px'; el.style.opacity = '1'; };
+                document.addEventListener('mousemove', move);
+                document.addEventListener('mouseleave', ()=>{ el.style.opacity = '0'; });
+                document.addEventListener('mouseenter', ()=>{ el.style.opacity = '1'; });
+            })();
+        </script>
 
         </div>
 
 
     </body>
 </html>
+</div>

@@ -71,7 +71,7 @@
 
                             <br> <br> Inspired both by freely made and distributed aesthetic mod packs and free to play web hosted dress up games, bug mod replaces super clean digital aesthetics with something grimier, something that wriggles and squirms away.
 
-                            <br> <br>This game is a collaborative effort between George and xin.<br><br>
+                            <br> <br>This game is a collaborative effort between George and song xin. all the music tracks by Celeste Viv Ly @virtio.djvu ; sounds effects and trailer by Flo @f.l.o.____<br><br>
 
                             *Unreal Engine<br>
                             *Zbrush<br>
@@ -170,6 +170,7 @@
         <div class="bottom_container">
             <div class="video_container">
                 <video src="assets/TRAILER_with_Gameplay.mp4" controls autoplay muted loop></video>
+                <video src="assets\playthrough video.mp4" controls autoplay muted loop></video>
             </div>
 
 
@@ -455,7 +456,12 @@
         const frameBlink = ["(\\___/)", " \\^ ^/", "  \\ /", "   *    "].join("\n");
         el.textContent = frameOpen;
         function doBlinkOnce(){ el.textContent = frameBlink; setTimeout(()=>{ el.textContent = frameOpen; },120); }
-        (function schedule(){ setTimeout(()=>{ if (Math.random()<0.25){ doBlinkOnce(); setTimeout(doBlinkOnce,220);} else { doBlinkOnce(); } schedule(); }, 2000+Math.random()*5000); })();
+        (function schedule(){
+          setTimeout(()=>{
+            if (Math.random()<0.5){ doBlinkOnce(); setTimeout(doBlinkOnce,180);} else { doBlinkOnce(); }
+            schedule();
+          }, 800+Math.random()*1800);
+        })();
         const move = (e)=>{ el.style.left = e.clientX+'px'; el.style.top = e.clientY+'px'; el.style.opacity = '1'; };
         document.addEventListener('mousemove', move);
         document.addEventListener('mouseleave', ()=>{ el.style.opacity = '0'; });
