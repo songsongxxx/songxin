@@ -56,6 +56,35 @@
             box-shadow: 0 0 32px 4px #ff2222;
             /* 红色发光只在PDF区域 */
         }
+
+        /* zoom system */
+        :root { --zoom: 1; }
+        html { font-size: calc(100% * var(--zoom)); transition: background-color .3s ease, filter .3s ease; }
+        body { transition: background-color .3s ease, filter .3s ease; }
+        /* tint when zoomed in or out */
+        body.zoom-tint { background-color: #fff6f8 !important; filter: hue-rotate(8deg) saturate(1.06); }
+        body.zoom-cool { background-color: #f2f9ff !important; filter: hue-rotate(-8deg) saturate(1.02); }
+
+        /* controls overlay (copied style from about, minimal) */
+        #controls {
+          position: fixed; right: 16px; bottom: 16px; z-index: 10000;
+          border: 1px solid #ddd; background: #ffffffd9; padding: 8px 12px; border-radius: 999px;
+          cursor: pointer; user-select: none; font-family: 'HIDESerif', serif;
+          box-shadow: 0 6px 18px rgba(0,0,0,.06);
+        }
+        #controls span { font-size: .95rem; color: #333; }
+        #controls:hover { background: #fff; }
+
+        /* xin-message (same block as about, but visible here) */
+        #xin-message {
+          position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+          font-size: 1.2rem; color: #ffbacb; font-weight: bold; padding: 0.08em 0.35em;
+          border-radius: 0.5em; display: block; z-index: 10000; text-align: center; background: none;
+          text-shadow: 0 0 212px #ff2222, 0 0 0px #ff2222, 1px 1px 0 #ff2222, 0 12px 314px #ff2222;
+        }
+        @media only screen and (max-width: 600px) {
+          #xin-message { font-size: .9rem; }
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script>
@@ -196,6 +225,51 @@
         </div>
     </div>
 </div>
+
+<!-- Controls overlay (same as about) -->
+<div id="controls"><span>zoom</span></div>
+
+<!-- xin-message (same as about) -->
+<div id="xin-message" style="cursor:pointer;">
+    hi, i’m xin!<br> Ask me to send you my portfolio ^0^ hire me!!
+</div>
+<script>
+    // open IG on click
+    document.getElementById('xin-message')?.addEventListener('click', function () {
+        window.open('https://www.instagram.com/songxin.xin/', '_blank');
+    });
+
+    // zoom/tint logic
+    (function () {
+        let zoom = 1;
+        const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+        const apply = () => {
+            document.documentElement.style.setProperty('--zoom', zoom.toFixed(2));
+            document.body.classList.toggle('zoom-tint', zoom > 1.01);
+            document.body.classList.toggle('zoom-cool', zoom < 0.99);
+            if (zoom >= 0.99 && zoom <= 1.01) {
+                document.body.classList.remove('zoom-tint');
+                document.body.classList.remove('zoom-cool');
+            }
+        };
+        apply();
+
+        // click control: quick toggle
+        document.getElementById('controls')?.addEventListener('click', () => {
+            zoom = (zoom < 1.2) ? 1.33 : 1;
+            apply();
+        });
+
+        // keyboard: Cmd/Ctrl + +/-/0
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                if (e.key === '=' || e.key === '+') { e.preventDefault(); zoom = clamp(zoom + 0.1, 0.8, 1.8); apply(); }
+                else if (e.key === '-' || e.key === '_') { e.preventDefault(); zoom = clamp(zoom - 0.1, 0.8, 1.8); apply(); }
+                else if (e.key === '0') { e.preventDefault(); zoom = 1; apply(); }
+            }
+        });
+    })();
+</script>
 
 <!-- ASCII cursor -->
 <style>
